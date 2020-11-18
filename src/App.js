@@ -14,7 +14,7 @@ function App() {
     <Container fluid>
       <Row className="row">
         {/* LEFT SIDE */}
-        <div className="col-md-6 no-gutters">
+        <div className="col-md-6">
           <div className="left-side d-flex justify-content-center align-items-center">
             <Row>
               <NotebookCard color="dark-blue" />
@@ -34,7 +34,7 @@ function App() {
           </div>
         </div>
         {/* RIGHT SIDE */}
-        <div className="col-md-6 no-gutters">
+        <div className="col-md-6">
           <div className="right-side d-flex justify-content-center align-items-center">
             right
           </div>
