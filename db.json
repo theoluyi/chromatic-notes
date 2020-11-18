@@ -1,0 +1,11 @@
+{
+    "users": {
+        "username": "Example_User",
+        "passwordHash": "123456789",
+        "notebooks": [
+            {
+                "name": "Journal"
+            }
+        ]
+    }
+}

@@ -5,15 +5,55 @@
 }
 
 @media screen and (min-width: 768px) {
-    .left-side, .right-side {
-        height: 100vh;
-    }
-}
-
-.left-side {
-  background: red;
+  .left-side,
+  .right-side {
+    height: 100vh;
+  }
 }
 
 .right-side {
+  background: lightgrey;
+}
+
+.left-side {
+  height: 100vh;
+  background: whitesmoke;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "box1 box1 box1";
+}
+
+/* .box1 {
+  background: lightgreen;
+  grid-area: box1;
+} */
+
+#dark-blue {
+  background: darkblue;
+  grid-area: box1;
+}
+#dark-red {
+  background: darkred;
+}
+#dark-green {
+  background: darkgreen;
+}
+#blue {
   background: blue;
+}
+#red {
+  background: red;
+}
+#green {
+  background: green;
+}
+#light-blue {
+  background: lightblue;
+}
+#light-red {
+  background: pink;
+}
+#light-green {
+  background: lightgreen;
 }

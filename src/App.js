@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import NotebookCard from "./Components/NotebookCard";
+// import Button from "react-bootstrap/Button";
 
 function App() {
   // selectedNoteIndex, selectedNote, notes
@@ -10,15 +12,26 @@ function App() {
 
   return (
     <>
-      <div className="row no-gutters">
+      <div className="row">
         <div className="col-md-6 no-gutters">
+
           <div className="left-side d-flex justify-content-center align-items-center">
-            hello
-          </div>
+            <NotebookCard color="dark-blue" />
+            <NotebookCard color="dark-red" />
+            <NotebookCard color="dark-green" />
+            <NotebookCard color="blue" />
+            <NotebookCard color="red" />
+            <NotebookCard color="green" />
+            <NotebookCard color="light-blue" />
+            <NotebookCard color="light-red" />
+            <NotebookCard color="light-green" />
+          </div>  {/* App.js */}
+
+          
         </div>
         <div className="col-md-6 no-gutters">
           <div className="right-side d-flex justify-content-center align-items-center">
-            goodbye
+            right
           </div>
         </div>
       </div>
