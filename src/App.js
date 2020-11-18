@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import NotebookCard from "./Components/NotebookCard";
 // import Button from "react-bootstrap/Button";
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
     <>
       <div className="row">
         <div className="col-md-6 no-gutters">
-
           <div className="left-side d-flex justify-content-center align-items-center">
             <NotebookCard color="dark-blue" />
             <NotebookCard color="dark-red" />
@@ -25,9 +23,7 @@ function App() {
             <NotebookCard color="light-blue" />
             <NotebookCard color="light-red" />
             <NotebookCard color="light-green" />
-          </div>  {/* App.js */}
-
-          
+          </div>
         </div>
         <div className="col-md-6 no-gutters">
           <div className="right-side d-flex justify-content-center align-items-center">
@@ -38,5 +34,9 @@ function App() {
     </>
   );
 }
+
+const NotebookCard = (props) => {
+  return <div id={props.color}> inside the NotebookCard</div>;
+};
 
 export default App;
