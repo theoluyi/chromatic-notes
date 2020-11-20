@@ -18,39 +18,54 @@
 .left-side {
   height: 100vh;
   background: whitesmoke;
-  /* display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "box1 box2 box3"
     "box4 box5 box6"
-    "box7 box8 box9"; */
+    "box7 box8 box9";
+}
+
+.notebook-card {
+  padding: 20%;
+  color: whitesmoke;
+  border: whitesmoke solid 0.3rem;
 }
 
 #dark-blue {
   background: darkblue;
+  grid-area: box1;
 }
 #dark-red {
   background: darkred;
+  grid-area: box2;
 }
 #dark-green {
   background: darkgreen;
+  grid-area: box3;
 }
 #blue {
   background: blue;
+  grid-area: box4;
 }
 #red {
   background: red;
+  grid-area: box5;
 }
 #green {
   background: green;
+  grid-area: box6;
 }
 #light-blue {
   background: lightblue;
+  grid-area: box7;
 }
 #light-red {
   background: pink;
+  grid-area: box8;
 }
 #light-green {
   background: lightgreen;
+  grid-area: box9;
 }
