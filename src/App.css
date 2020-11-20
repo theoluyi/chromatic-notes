@@ -5,6 +5,7 @@
   padding: 0.3rem;
 }
 
+/* what was Tom's understanding of this media query? */
 @media screen and (min-width: 768px) {
   .left-side,
   .right-side {
@@ -13,7 +14,7 @@
 }
 
 .right-side {
-  background: lightgrey;
+  background: whitesmoke;
 }
 
 .left-side {
@@ -32,6 +33,14 @@
   padding: 0.3rem;
   color: whitesmoke;
   border: whitesmoke solid 0.3rem;
+  display: flex;
+}
+
+div p {
+  color: whitesmoke;
+  align-self: center;
+  /* justify-content: flex-end; */
+  /* flex-grow: 1; */
 }
 
 #dark-blue {

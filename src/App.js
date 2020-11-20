@@ -35,7 +35,7 @@ function App() {
 const NotebookCard = (props) => {
   return (
     <div className="notebook-card" id={props.color}>
-      inside the NotebookCard
+      <p>NotebookCard</p>
     </div>
   );
 };
