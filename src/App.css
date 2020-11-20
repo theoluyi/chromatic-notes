@@ -2,6 +2,7 @@
 .right-side {
   height: 50vh;
   width: 100%;
+  padding: 0.3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -28,44 +29,44 @@
 }
 
 .notebook-card {
-  padding: 20%;
+  padding: 0.3rem;
   color: whitesmoke;
   border: whitesmoke solid 0.3rem;
 }
 
 #dark-blue {
-  background: darkblue;
+  background: #6581e4;
   grid-area: box1;
 }
 #dark-red {
-  background: darkred;
+  background: #e75c6d;
   grid-area: box2;
 }
 #dark-green {
-  background: darkgreen;
+  background: #62b06f;
   grid-area: box3;
 }
 #blue {
-  background: blue;
+  background: #9baff4;
   grid-area: box4;
 }
 #red {
-  background: red;
+  background: #f8818f;
   grid-area: box5;
 }
 #green {
-  background: green;
+  background: #78cc85;
   grid-area: box6;
 }
 #light-blue {
-  background: lightblue;
+  background: #bbc7ef;
   grid-area: box7;
 }
 #light-red {
-  background: pink;
+  background: #ffa8b3;
   grid-area: box8;
 }
 #light-green {
-  background: lightgreen;
+  background: #99eca6;
   grid-area: box9;
 }
