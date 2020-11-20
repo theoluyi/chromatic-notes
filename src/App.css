@@ -3,8 +3,7 @@
   height: 50vh;
   width: 100%;
 }
-/* when the width goes below 768px, CSS setting will change to go to 100 vh, instead of previous
-setting (of 50vh) */
+
 @media screen and (min-width: 768px) {
   .left-side,
   .right-side {
@@ -27,18 +26,6 @@ setting (of 50vh) */
     "box4 box5 box6"
     "box7 box8 box9"; */
 }
-
-/* Tom Code */
-/* .row {
-  border: 5px solid red;
-} */
-
-/* .test {
-  border: 5px solid blue;
-  width: 100%;
-  height: 100%;
-} */
-/* Tom Code */
 
 #dark-blue {
   background: darkblue;
@@ -66,8 +53,4 @@ setting (of 50vh) */
 }
 #light-green {
   background: lightgreen;
-}
-
-.notebook-card {
-  background: red;
 }
