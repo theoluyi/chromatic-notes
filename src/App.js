@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-// import Button from "react-bootstrap/Button";
+
+import TableOfContents from "./Components/TableOfContents";
 
 function App() {
-  // selectedNoteIndex, selectedNote, notes
-  const [selectedNoteIndex, setSelectedNoteIndex] = useState(null);
-  const [selectedNote, setSelectedNote] = useState(null);
-  const [notes, setNotes] = useState(null);
-
-  // removed these additional bootstrap classNames from left and right-side:  d-flex justify-content-center align-items-center
+  // removed these additional bootstrap classNames
+  // from left and right-side: d-flex justify-content-center
+  // align-items-center
   return (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
@@ -26,7 +24,9 @@ function App() {
         </div>
       </div>
       <div className="col-md-6 no-gutters">
-        <div className="right-side">right</div>
+        <div className="right-side d-flex justify-content-center align-items-center">
+          <TableOfContents />
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@
   padding: 0.3rem;
 }
 
-/* what was Tom's understanding of this media query? */
 @media screen and (min-width: 768px) {
   .left-side,
   .right-side {
@@ -21,6 +20,9 @@
   height: 100vh;
   background: whitesmoke;
   display: grid;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
