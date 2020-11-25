@@ -35,7 +35,7 @@ function App() {
 const NotebookCard = (props) => {
   return (
     <div className="notebook-card" id={props.color}>
-      <p>NotebookCard</p>
+      <p>Notebook</p>
     </div>
   );
 };

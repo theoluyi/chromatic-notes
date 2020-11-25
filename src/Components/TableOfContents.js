@@ -1,10 +1,18 @@
 import React from "react";
+import NotePreviewCard from "./NotePreviewCard";
 
-const TableOfContents = () => {
+const TableOfContents = (props) => {
   return (
-    <div>
-      <h2>I am the header for the TableOfContents</h2>
-      <p>I am the p tag in the TableOfContents</p>
+    <div style={{ backgroundColor: "#6581e4", width: "100%" }}>
+      <h2 style={{ textAlign: "center", color: "whitesmoke" }}>
+        Table of Contents
+      </h2>{" "}
+      <br />
+      <ul>
+        <NotePreviewCard />
+        <NotePreviewCard />
+        <NotePreviewCard />
+      </ul>
     </div>
   );
 };
