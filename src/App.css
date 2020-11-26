@@ -81,3 +81,11 @@ div p {
   background: #99eca6;
   grid-area: box9;
 }
+
+/* .card-header {
+  color: red;
+} */
+
+.note-title {
+  color: whitesmoke;
+}

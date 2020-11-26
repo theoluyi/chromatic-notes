@@ -20,8 +20,6 @@ const TableOfContents = (props) => {
         <NotePreviewCard />
         <NotePreviewCard />
         <NotePreviewCard />
-        <NotePreviewCard />
-        <NotePreviewCard />
       </ul>
     </div>
   );
