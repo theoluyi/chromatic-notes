@@ -24,7 +24,16 @@ function App() {
         </div>
       </div>
       <div className="col-md-6 no-gutters">
-        <div className="right-side d-flex justify-content-center align-items-center">
+        <div
+          className="right-side d-flex justify-content-center align-items-center"
+          style={{
+            backgroundColor: "#6581e4",
+            padding: "1rem",
+            border: "solid whitesmoke .3rem",
+            color: "whitesmoke",
+            textAlign: "center",
+          }}
+        >
           <TableOfContents />
         </div>
       </div>

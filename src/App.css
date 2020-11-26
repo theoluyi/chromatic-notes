@@ -2,7 +2,6 @@
 .right-side {
   height: 50vh;
   width: 100%;
-  padding: 0.3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,18 +30,22 @@
     "box7 box8 box9";
 }
 
+/* Notebook card styling */
+/* It seems that to push the text left and right I need to target the container? using justify-content: center */
 .notebook-card {
   padding: 0.3rem;
   color: whitesmoke;
   border: whitesmoke solid 0.3rem;
   display: flex;
+  justify-content: center;
 }
 
+/* Notebook card text styling */
+/* I can align the push the text up and down by targeting the text element itself w/   align-self: center; */
 div p {
   color: whitesmoke;
   align-self: center;
-  /* justify-content: flex-end; */
-  /* flex-grow: 1; */
+  font-weight: bold;
 }
 
 #dark-blue {
@@ -88,4 +91,5 @@ div p {
 
 .note-title {
   color: whitesmoke;
+  font-weight: bold;
 }

@@ -1,26 +1,21 @@
 import React from "react";
 import NotePreviewCard from "./NotePreviewCard";
 
+// QQ this hardcoded component uses inline styling
 const TableOfContents = (props) => {
   return (
     <div
       style={{
-        backgroundColor: "#6581e4",
         width: "100%",
         height: "100%",
-        padding: "1rem",
       }}
     >
-      <h2 style={{ textAlign: "center", color: "whitesmoke" }}>
-        Table of Contents
-      </h2>{" "}
-      <br />
-      <ul>
-        <NotePreviewCard />
-        <NotePreviewCard />
-        <NotePreviewCard />
-        <NotePreviewCard />
-      </ul>
+      <h1>Notebook Title</h1>
+      <h2>Table of Contents</h2> <br />
+      <NotePreviewCard />
+      <NotePreviewCard />
+      <NotePreviewCard />
+      <NotePreviewCard />
     </div>
   );
 };
