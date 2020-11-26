@@ -11,6 +11,7 @@ const TableOfContents = (props) => {
       }}
     >
       <h1>Notebook Title</h1>
+      <hr />
       <h2>Table of Contents</h2> <br />
       <NotePreviewCard />
       <NotePreviewCard />
