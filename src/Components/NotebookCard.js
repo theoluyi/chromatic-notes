@@ -1,5 +1,5 @@
 import React from "react";
-import "./NotebookCard.css";
+import "../Component_Styles/NotebookCard.css";
 
 const NotebookCard = (props) => {
   return (
