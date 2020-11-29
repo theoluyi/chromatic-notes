@@ -2,3 +2,8 @@
   color: whitesmoke;
   font-weight: bold;
 }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}

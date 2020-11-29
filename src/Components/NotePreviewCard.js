@@ -8,21 +8,16 @@ import "../Component_Styles/NotePreviewCard.css";
 const NotePreviewCard = () => {
   return (
     <Accordion>
-      <Card
-        bg="transparent"
-        text="light"
-        style={{ width: "100%", color: "whitesmoke" }}
-      >
+      <Card bg="transparent" text="light">
         <Card.Header>
           <Accordion.Toggle as={Button} variant="transparent" eventKey="0">
             <span className="note-title">Note Title</span>{" "}
           </Accordion.Toggle>
           <span>
             <Button variant="secondary">🖊</Button>{" "}
-          </span>
-          <span>
             <Button variant="dark">🗑</Button>
           </span>
+          <span>1-10</span>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>Preview text...................................</Card.Body>

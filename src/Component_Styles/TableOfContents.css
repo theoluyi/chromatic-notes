@@ -1,0 +1,5 @@
+/* randomly just tried button here, kind of like the color change on hover, keeping it for now */
+.btn {
+  color: whitesmoke;
+  border: solid whitesmoke 1px;
+}
