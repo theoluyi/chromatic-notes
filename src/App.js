@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import NotebookCard from './Components/NotebookCard'
+import NotebookCard from "./Components/NotebookCard";
 
 import TableOfContents from "./Components/TableOfContents";
 
