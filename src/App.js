@@ -4,11 +4,16 @@ import "./App.css";
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
 import TableOfContents from "./Components/TableOfContents";
+import notebooks from "./data.js";
 
 function App() {
   // removed these additional bootstrap classNames
   // from left and right-side: d-flex justify-content-center
   // align-items-center
+
+  // let journalNotes = data.users.notebooks[0].notes;
+  let journalNotes = notebooks[0].notes;
+  console.log(journalNotes);
   return (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
