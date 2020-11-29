@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import NotebookCard from "./Components/NotebookCard";
+import NotePage from "./Components/NotePage";
 
 import TableOfContents from "./Components/TableOfContents";
 
@@ -35,7 +36,8 @@ function App() {
             textAlign: "center",
           }}
         >
-          <TableOfContents />
+          {/* <TableOfContents /> */}
+          <NotePage />
         </div>
       </div>
     </div>
