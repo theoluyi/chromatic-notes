@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
-
 import TableOfContents from "./Components/TableOfContents";
 
 function App() {
@@ -26,6 +25,8 @@ function App() {
         </div>
       </div>
       <div className="col-md-6 no-gutters">
+        {/* I think these Bootstrap classNames were why my attempt to apply flex column display to right-side
+      caused UI issues resulting in the content jumping downwards */}
         <div
           className="right-side d-flex justify-content-center align-items-center"
           style={{
