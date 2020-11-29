@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import NotebookCard from './Components/NotebookCard'
 
 import TableOfContents from "./Components/TableOfContents";
 
@@ -40,13 +41,5 @@ function App() {
     </div>
   );
 }
-
-const NotebookCard = (props) => {
-  return (
-    <div className="notebook-card" id={props.color}>
-      <p>Notebook</p>
-    </div>
-  );
-};
 
 export default App;
