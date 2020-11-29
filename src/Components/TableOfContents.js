@@ -20,7 +20,10 @@ const TableOfContents = (props) => {
       <NotePreviewCard />
       <NotePreviewCard />
       <br />
-      <Button variant="transparent">+</Button>
+      <Button variant="transparent">+</Button> <br />
+      <br />
+      <br />
+      <Button variant="transparent">i</Button>
     </div>
   );
 };

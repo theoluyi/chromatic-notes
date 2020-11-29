@@ -1,3 +1,9 @@
+div {
+  /* display: flex; */
+  /* background-color: brown; */
+  /* flex-direction: column; */
+}
+
 /* randomly just tried button here, kind of like the color change on hover, keeping it for now */
 .btn {
   color: whitesmoke;
