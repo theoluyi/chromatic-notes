@@ -4,30 +4,26 @@ import "./App.css";
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
 import TableOfContents from "./Components/TableOfContents";
-import notebooks from "./data.js";
+import data from "./data.js";
 
 function App() {
   // removed these additional bootstrap classNames
   // from left and right-side: d-flex justify-content-center
   // align-items-center
 
-  // let journalNotes = data.users.notebooks[0].notes;
-  let journalNotes = notebooks[0].notes;
-  console.log(journalNotes);
+  const notebooks = data.map((notebook) => (
+    <NotebookCard
+      key={notebook.color}
+      color={notebook.color}
+      name={notebook.name}
+    />
+  ));
+
+  console.log(notebooks);
   return (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
-        <div className="left-side">
-          <NotebookCard color="dark-blue" />
-          <NotebookCard color="dark-red" />
-          <NotebookCard color="dark-green" />
-          <NotebookCard color="blue" />
-          <NotebookCard color="red" />
-          <NotebookCard color="green" />
-          <NotebookCard color="light-blue" />
-          <NotebookCard color="light-red" />
-          <NotebookCard color="light-green" />
-        </div>
+        <div className="left-side">{notebooks}</div>
       </div>
       <div className="col-md-6 no-gutters">
         {/* I think these Bootstrap classNames were why my attempt to apply flex column display to right-side
