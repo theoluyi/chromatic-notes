@@ -1,0 +1,9 @@
+.note-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-info {
+  border: whitesmoke solid 3px;
+}
