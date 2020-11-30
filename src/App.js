@@ -29,7 +29,7 @@ function App() {
         {/* I think these Bootstrap classNames were why my attempt to apply flex column display to right-side
       caused UI issues resulting in the content jumping downwards */}
         <div
-          className="right-side d-flex justify-content-center align-items-center"
+          className="right-side"
           style={{
             backgroundColor: "#6581e4",
             padding: "1rem",
