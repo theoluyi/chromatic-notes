@@ -3,13 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
+import SignInView from "./Components/SignInView";
+import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 import data from "./data.js";
 
 function App() {
-  // removed these additional bootstrap classNames
-  // from left and right-side: d-flex justify-content-center
-  // align-items-center
+  const [view, setView] = useState(0);
 
   const notebooks = data.map((notebook) => (
     <NotebookCard
@@ -26,20 +26,9 @@ function App() {
         <div className="left-side">{notebooks}</div>
       </div>
       <div className="col-md-6 no-gutters">
-        {/* I think these Bootstrap classNames were why my attempt to apply flex column display to right-side
-      caused UI issues resulting in the content jumping downwards */}
-        <div
-          className="right-side"
-          style={{
-            backgroundColor: "#6581e4",
-            padding: "1rem",
-            border: "solid whitesmoke .3rem",
-            color: "whitesmoke",
-            textAlign: "center",
-          }}
-        >
+        <div className="right-side">
           {/* <TableOfContents /> */}
-          <NotePage />
+          {/* <NotePage /> */}
         </div>
       </div>
     </div>

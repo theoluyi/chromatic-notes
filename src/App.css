@@ -12,7 +12,12 @@
 }
 
 .right-side {
-  background: whitesmoke;
+  /* background: whitesmoke;
+  background-color: #6581e4; */
+  padding: 1rem;
+  border: solid whitesmoke 0.3rem;
+  color: whitesmoke;
+  text-align: center;
 }
 
 .left-side {
