@@ -27,8 +27,11 @@ function App() {
       </div>
       <div className="col-md-6 no-gutters">
         <div className="right-side">
+          {/* use routing here */}
+          {/* <SignInView />
+          <SignedInView /> */}
           {/* <TableOfContents /> */}
-          {/* <NotePage /> */}
+          <NotePage />
         </div>
       </div>
     </div>
