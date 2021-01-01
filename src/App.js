@@ -23,8 +23,12 @@ function App() {
   return (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
-        <div className="left-side">{notebooks}</div>
+
+        <div className="left-side">
+          { notebooks }
+        </div>
       </div>
+
       <div className="col-md-6 no-gutters">
         <div className="right-side">
           {/* use routing here */}
@@ -34,6 +38,7 @@ function App() {
           <NotePage />
         </div>
       </div>
+      
     </div>
   );
 }
