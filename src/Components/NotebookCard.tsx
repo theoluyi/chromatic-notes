@@ -1,10 +1,16 @@
 import React from "react";
 import "../Component_Styles/NotebookCard.css";
 
-const NotebookCard = (props) => {
+interface NotebookProp {
+  color: string;
+  name: string;
+  [propName: string]: any;
+}
+
+const NotebookCard = (NotebookProp) => {
   return (
-    <div className="notebook-card" id={props.color}>
-      <p>{props.name}</p>
+    <div className="notebook-card" id={NotebookProp.color}>
+      <p>{NotebookProp.name}</p>
     </div>
   );
 };
