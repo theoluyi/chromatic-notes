@@ -19,13 +19,6 @@ function App() {
     />
   ));
 
-  console.log(notebooks);
-  console.log(notebooks);
-  console.log(notebooks);
-  console.log(notebooks);
-    console.log(notebooks);	
-    console.log(notebooks);
-
   return (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
