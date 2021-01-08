@@ -31,11 +31,16 @@ function App() {
 
       <div className="col-md-6 no-gutters">
         <div className="right-side">
+<<<<<<< HEAD
           {/* use routing here */}
           {/* <SignInView />
           <SignedInView /> */}
           {/* <TableOfContents /> */}
           <NotePage />
+=======
+          <TableOfContents />
+          {/* <NotePage /> */}
+>>>>>>> feature/routing
         </div>
       </div>
       
