@@ -27,7 +27,7 @@ function App() {
       </div>
       <div className="col-md-6 no-gutters">
         <div className="right-side">
-          {/* <TableOfContents /> */}
+          <TableOfContents />
           {/* <NotePage /> */}
         </div>
       </div>
