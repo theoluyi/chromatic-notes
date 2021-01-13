@@ -3,7 +3,7 @@ import "../Component_Styles/NotebookCard.css";
 
 const NotebookCard = (props) => {
 
-  const handleClick = () => console.log("Haha you clicked me.")
+  const handleClick = () => console.log(`My props.color is ${props.color}`)
 
   return (
     <div className="notebook-card" id={props.color} onClick={handleClick}>
