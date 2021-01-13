@@ -2,8 +2,11 @@ import React from "react";
 import "../Component_Styles/NotebookCard.css";
 
 const NotebookCard = (props) => {
+
+  const handleClick = () => console.log("Haha you clicked me.")
+
   return (
-    <div className="notebook-card" id={props.color}>
+    <div className="notebook-card" id={props.color} onClick={handleClick}>
       <p>{props.name}</p>
     </div>
   );
