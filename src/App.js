@@ -16,7 +16,7 @@ import "./App.css";
 // Components
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
-import SignInView from "./Components/SignInView";
+import SignInView from "./Components/PleaseSignInView";
 import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 

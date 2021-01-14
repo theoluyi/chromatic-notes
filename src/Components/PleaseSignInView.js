@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-// import "../Component_Styles/SignInView.css";
+// import "../Component_Styles/PleaseSignInView.css";
 
-const SignInView = (props) => {
+const PleaseSignInView = (props) => {
   return (
     <div>
       <h2>Chromatic Notes</h2>
@@ -15,4 +15,4 @@ const SignInView = (props) => {
   );
 };
 
-export default SignInView;
+export default PleaseSignInView;
