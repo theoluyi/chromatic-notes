@@ -75,7 +75,9 @@ function App() {
   return (
     <Router>
       <Route exact path="/" render={() => defaultView } />
-    
+      {/* next feature to implement is below */}
+      {/* <Route path='/:notebook' render={routerProps => <TableOfContents {...routerProps} notes={this.state.notes}/>} /> */}
+
     </Router>
   );
 }
