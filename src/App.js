@@ -27,6 +27,7 @@ function App() {
   const [view, setView] = useState(0);
 
   return (
+    <Router>
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
         <div className="left-side">
@@ -46,6 +47,7 @@ function App() {
         </div>
       </div>
     </div>
+    </Router>
   );
 }
 
