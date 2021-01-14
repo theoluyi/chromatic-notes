@@ -68,7 +68,7 @@ function App() {
 
       <div className="col-md-6 no-gutters">
         <div className="right-side">
-            <PleaseSignInView/>
+            {false? <PleaseSignInView/> : <SignedInView/>}
           {/* <TableOfContents /> */}
           {/* <NotePage /> */}
         </div>

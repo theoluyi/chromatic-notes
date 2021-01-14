@@ -3,8 +3,16 @@ import React from "react";
 
 const SignedInView = (props) => {
   return (
-    <div className="notebook-card" id={props.color}>
-      <p>{props.name}</p>
+    <div>
+      <br />
+      <br />      
+      <br />
+      <br />
+      <br />      
+      <br />
+      <br />
+      <h2 style={{color: 'black'}}>Welcome User</h2>
+      <h2 style={{color: 'black'}}>Your desk is empty</h2>
     </div>
   );
 };

@@ -18,7 +18,6 @@ const PleaseSignInView = (props) => {
       <Button variant="secondary">Sign up</Button> 
       <br />
       <br />      
-      <br />
       <p style={{color: 'black'}}>Notes written without signing in will not be saved.</p>
     </div>
   );
