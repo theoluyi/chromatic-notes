@@ -1,11 +1,19 @@
+// React
 import React, { useState } from "react";
+
+
+// Styling
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
+// Components
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
 import SignInView from "./Components/SignInView";
 import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
+
+// mock data 
 import data from "./data.js";
 
 function App() {
