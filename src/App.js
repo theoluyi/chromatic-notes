@@ -46,6 +46,26 @@ import data from "./data.js";
   * only the NotebookCard grid (data.map....) is higher level than that
   */
 
+
+  const defaultView = (    <div className="row no-gutters">
+  <div className="col-md-6 no-gutters">
+    <div className="left-side">
+      {data.map((notebook) => (
+        <NotebookCard
+          key={notebook.color}
+          color={notebook.color}
+          name={notebook.name}
+        />))}
+    </div>
+  </div>
+
+  <div className="col-md-6 no-gutters">
+    <div className="right-side">
+        {true? <PleaseSignInView/> : <SignedInView/>}
+    </div>
+  </div>
+</div>)
+
 function App() {
   // const [view, setView] = useState(0);
 
@@ -54,26 +74,8 @@ function App() {
   
   return (
     <Router>
-    <div className="row no-gutters">
-      <div className="col-md-6 no-gutters">
-        <div className="left-side">
-          {data.map((notebook) => (
-            <NotebookCard
-              key={notebook.color}
-              color={notebook.color}
-              name={notebook.name}
-            />))}
-        </div>
-      </div>
-
-      <div className="col-md-6 no-gutters">
-        <div className="right-side">
-            {false? <PleaseSignInView/> : <SignedInView/>}
-          {/* <TableOfContents /> */}
-          {/* <NotePage /> */}
-        </div>
-      </div>
-    </div>
+      <Route exact path="/" render={() => defaultView } />
+    
     </Router>
   );
 }
