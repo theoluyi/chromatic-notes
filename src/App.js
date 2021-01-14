@@ -16,7 +16,7 @@ import "./App.css";
 // Components
 import NotebookCard from "./Components/NotebookCard";
 import NotePage from "./Components/NotePage";
-import SignInView from "./Components/PleaseSignInView";
+import PleaseSignInView from "./Components/PleaseSignInView";
 import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 
@@ -49,6 +49,9 @@ import data from "./data.js";
 function App() {
   // const [view, setView] = useState(0);
 
+  // <Route exact path="/" render={() => <div>Home</div>} />
+  // <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
+  
   return (
     <Router>
     <div className="row no-gutters">
@@ -65,6 +68,7 @@ function App() {
 
       <div className="col-md-6 no-gutters">
         <div className="right-side">
+            <PleaseSignInView/>
           {/* <TableOfContents /> */}
           {/* <NotePage /> */}
         </div>
