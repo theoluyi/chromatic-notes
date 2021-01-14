@@ -23,8 +23,31 @@ import TableOfContents from "./Components/TableOfContents";
 // mock data 
 import data from "./data.js";
 
+/**
+ * it seems like within the routing bs I'm also going to have layer in 
+ * validations/ternaries to conditionally render different things if the user is signed in or not
+ */
+ /**
+  * nest routes: I want to use master-detail pattern
+  * I like the idea of being able to have the left side switch to the
+  * table of contents view, so that you kind of burrow into the app, and the 
+  * master view changes depending on what layer you're at, but in the interest of
+  * moving forward and not pausing and waffling over extra levels of complexity 
+  * that I didn't even decide to put into the Figma design, I think it's fine if I just
+  * omit that thought for now and focus on following the design
+  * 
+  * that means that the master is the notebooks card 3x3 grid
+  * the details are the table of contents and the individual notes
+  * these two details should be side by side because one replaces the other
+  * that's my current understanding of the difference between nested routes and
+  * regular routing. In regular, when you switch to a new route, it overlays on top of the component,
+  * it overwrites/obliterates the other component from the screen. I think this is what we are trying to do.
+  * which means that every right side component should be at the same level of rendering hierarchy
+  * only the NotebookCard grid (data.map....) is higher level than that
+  */
+
 function App() {
-  const [view, setView] = useState(0);
+  // const [view, setView] = useState(0);
 
   return (
     <Router>
