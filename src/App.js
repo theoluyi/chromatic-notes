@@ -11,20 +11,19 @@ import data from "./data.js";
 function App() {
   const [view, setView] = useState(0);
 
-  const notebooks = data.map((notebook) => (
-    <NotebookCard
-      key={notebook.color}
-      color={notebook.color}
-      name={notebook.name}
-    />
-  ));
-
-  console.log(notebooks);
   return (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
-        <div className="left-side">{notebooks}</div>
+        <div className="left-side">
+          {data.map((notebook) => (
+            <NotebookCard
+              key={notebook.color}
+              color={notebook.color}
+              name={notebook.name}
+            />))}
+        </div>
       </div>
+
       <div className="col-md-6 no-gutters">
         <div className="right-side">
           <TableOfContents />
