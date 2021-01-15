@@ -58,22 +58,31 @@ function App() {
     setDisplayedNotebook(notebookColor)
   }
 
+  const userNotebookGrid =  (data.map((notebook) => (
+    <NotebookCard
+      key={notebook.color}
+      color={notebook.color}
+      name={notebook.name}
+      selectNotebook={selectNotebook}
+    />)))
+  
+  const defaultNotebookGrid =  (data.map((notebook) => (
+    <NotebookCard
+      key={notebook.color}
+      color={notebook.color}
+      selectNotebook={selectNotebook}
+    />)))
+
   const defaultView = (
     <div className="row no-gutters">
       <div className="col-md-6 no-gutters">
         <div className="left-side">
-          {data.map((notebook) => (
-            <NotebookCard
-              key={notebook.color}
-              color={notebook.color}
-              name={notebook.name}
-              selectNotebook={selectNotebook}
-            />))}
+          {user? userNotebookGrid : defaultNotebookGrid}
         </div>
       </div>
       <div className="col-md-6 no-gutters">
         <div className="right-side">
-            {user? <PleaseSignInView/> : <SignedInView/>}
+            {user? <SignedInView/> : <PleaseSignInView/>}
         </div>
       </div>
     </div>
@@ -86,6 +95,7 @@ function App() {
       <Route exact path="/" render={() => defaultView } />
       {/* next feature to implement is below */}
       {/* <Route path='/:notebook' render={routerProps => <TableOfContents {...routerProps} notes={this.state.notes}/>} /> */}
+      {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
     </Router>
   );
 }
