@@ -52,38 +52,40 @@ function App() {
   // <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
 
   const [displayedNotebook, setDisplayedNotebook] = useState('no-notebook-selected') // might be better to use numbers?
-  
+  const [user, setUser] = useState(false)
+
   const selectNotebook = notebookColor => {
     setDisplayedNotebook(notebookColor)
   }
 
-  const defaultView = (<div className="row no-gutters">
-  <div className="col-md-6 no-gutters">
-    <div className="left-side">
-      {data.map((notebook) => (
-        <NotebookCard
-          key={notebook.color}
-          color={notebook.color}
-          name={notebook.name}
-          selectNotebook={selectNotebook}
-        />))}
+  const defaultView = (
+    <div className="row no-gutters">
+      <div className="col-md-6 no-gutters">
+        <div className="left-side">
+          {data.map((notebook) => (
+            <NotebookCard
+              key={notebook.color}
+              color={notebook.color}
+              name={notebook.name}
+              selectNotebook={selectNotebook}
+            />))}
+        </div>
+      </div>
+      <div className="col-md-6 no-gutters">
+        <div className="right-side">
+            {user? <PleaseSignInView/> : <SignedInView/>}
+        </div>
+      </div>
     </div>
-  </div>
+  )
 
-  <div className="col-md-6 no-gutters">
-    <div className="right-side">
-        {false? <PleaseSignInView/> : <SignedInView/>}
-    </div>
-  </div>
-</div>)
+  console.log("displayedNotebook: ", displayedNotebook)
 
-        console.log("displayedNotebook: ", displayedNotebook)
   return (
     <Router>
       <Route exact path="/" render={() => defaultView } />
       {/* next feature to implement is below */}
       {/* <Route path='/:notebook' render={routerProps => <TableOfContents {...routerProps} notes={this.state.notes}/>} /> */}
-
     </Router>
   );
 }
