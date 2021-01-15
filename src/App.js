@@ -59,7 +59,7 @@ function App() {
     setDisplayedNotebook(notebookColor)
   }
 
-  const userNotebookGrid =  (data.map((notebook) => (
+  const userNotebookNavGrid =  (data.map((notebook) => (
     <NotebookCard
       key={notebook.color}
       color={notebook.color}
@@ -67,7 +67,7 @@ function App() {
       selectNotebook={selectNotebook}
     />)))
   
-  const defaultNotebookGrid =  (data.map((notebook) => (
+  const defaultNotebookNavGrid =  (data.map((notebook) => (
     <NotebookCard
       key={notebook.color}
       color={notebook.color}
@@ -82,7 +82,7 @@ function App() {
     div className="row no-gutters">
       <div className="col-md-6 no-gutters">
         <div className="left-side">
-          {user? userNotebookGrid : defaultNotebookGrid}
+          {user? userNotebookNavGrid : defaultNotebookNavGrid}
         </div>
       </div>
       <div className="col-md-6 no-gutters">
