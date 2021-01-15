@@ -3,6 +3,11 @@ import Button from "react-bootstrap/Button";
 // import "../Component_Styles/PleaseSignInView.css";
 
 const PleaseSignInView = (props) => {
+
+  const handleSignInAndUp = () => {
+    props.mimicUserSignInAndUp()
+  }
+
   return (
     <div>
       <br />
@@ -13,9 +18,9 @@ const PleaseSignInView = (props) => {
       <br />
       <br />
       <h2 style={{color: 'black'}}>Chromatic Notes</h2>
-      <Button variant="secondary">Sign in</Button> 
+      <Button onClick={handleSignInAndUp} variant="secondary">Sign in</Button> 
       <br />
-      <Button variant="secondary">Sign up</Button> 
+      <Button onClick={handleSignInAndUp} variant="secondary">Sign up</Button> 
       <br />
       <br />      
       <p style={{color: 'black'}}>Notes written without signing in will not be saved.</p>

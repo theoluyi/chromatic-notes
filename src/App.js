@@ -73,8 +73,13 @@ function App() {
       selectNotebook={selectNotebook}
     />)))
 
-  const defaultView = (
-    <div className="row no-gutters">
+
+  const mimicUserSignInAndUp = () => {
+    setUser(true)
+  }
+
+  const defaultView = ( <
+    div className="row no-gutters">
       <div className="col-md-6 no-gutters">
         <div className="left-side">
           {user? userNotebookGrid : defaultNotebookGrid}
@@ -82,7 +87,8 @@ function App() {
       </div>
       <div className="col-md-6 no-gutters">
         <div className="right-side">
-            {user? <SignedInView/> : <PleaseSignInView/>}
+            {user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
+            : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>}
         </div>
       </div>
     </div>
