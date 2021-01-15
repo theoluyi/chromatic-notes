@@ -6,7 +6,8 @@ import {
   Route,
   Link,
   useRouteMatch,
-  useParams
+  useParams,
+  NavLink
 } from "react-router-dom";
 
 // Styling
@@ -73,7 +74,6 @@ function App() {
       selectNotebook={selectNotebook}
     />)))
 
-
   const mimicUserSignInAndUp = () => {
     setUser(true)
   }
@@ -87,8 +87,8 @@ function App() {
       </div>
       <div className="col-md-6 no-gutters">
         <div className="right-side">
-            {user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
-            : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>}
+            { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
+            : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
         </div>
       </div>
     </div>

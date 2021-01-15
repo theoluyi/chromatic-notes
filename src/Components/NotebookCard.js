@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import "../Component_Styles/NotebookCard.css";
 
 const NotebookCard = (props) => {
@@ -10,7 +11,9 @@ const NotebookCard = (props) => {
 
   return (
     <div className="notebook-card" id={props.color} onClick={handleClick}>
-      <p>{props.name}</p>
+      <NavLink to={`/${props.color}`}>
+        <p>{props.name}</p>
+      </NavLink>
     </div>
   );
 };
