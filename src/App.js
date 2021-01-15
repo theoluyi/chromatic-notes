@@ -59,7 +59,9 @@ function App() {
     setNotebook(notebookColor)
   }
 
-  const defaultView = (<div className="row no-gutters">
+//<<<<<<< feature/routing
+  const defaultView = (
+  <div className="row no-gutters">
   <div className="col-md-6 no-gutters">
     <div className="left-side">
       {data.map((notebook) => (
