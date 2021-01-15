@@ -51,10 +51,10 @@ function App() {
   // <Route exact path="/" render={() => <div>Home</div>} />
   // <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
 
-  const [notebook, setNotebook] = useState('no-notebook-selected') // might be better to use numbers?
+  const [displayedNotebook, setDisplayedNotebook] = useState('no-notebook-selected') // might be better to use numbers?
   
   const selectNotebook = notebookColor => {
-    setNotebook(notebookColor)
+    setDisplayedNotebook(notebookColor)
   }
 
   const defaultView = (<div className="row no-gutters">
@@ -77,7 +77,7 @@ function App() {
   </div>
 </div>)
 
-        console.log("notebook: ", notebook)
+        console.log("displayedNotebook: ", displayedNotebook)
   return (
     <Router>
       <Route exact path="/" render={() => defaultView } />
