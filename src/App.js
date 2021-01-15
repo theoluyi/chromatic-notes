@@ -47,7 +47,19 @@ import data from "./data.js";
   */
 
 
-  const defaultView = (    <div className="row no-gutters">
+
+function App() {
+  // const [view, setView] = useState(0);
+  // <Route exact path="/" render={() => <div>Home</div>} />
+  // <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
+
+  const [notebook, setNotebook] = useState('no-notebook-selected') // might be better to use numbers?
+  
+  const selectNotebook = notebookColor => {
+    setNotebook(notebookColor)
+  }
+
+  const defaultView = (<div className="row no-gutters">
   <div className="col-md-6 no-gutters">
     <div className="left-side">
       {data.map((notebook) => (
@@ -55,23 +67,18 @@ import data from "./data.js";
           key={notebook.color}
           color={notebook.color}
           name={notebook.name}
+          selectNotebook={selectNotebook}
         />))}
     </div>
   </div>
 
   <div className="col-md-6 no-gutters">
     <div className="right-side">
-        {true? <PleaseSignInView/> : <SignedInView/>}
+        {false? <PleaseSignInView/> : <SignedInView/>}
     </div>
   </div>
 </div>)
 
-function App() {
-  // const [view, setView] = useState(0);
-
-  // <Route exact path="/" render={() => <div>Home</div>} />
-  // <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
-  
   return (
     <Router>
       <Route exact path="/" render={() => defaultView } />
