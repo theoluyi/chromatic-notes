@@ -46,8 +46,6 @@ import data from "./data.js";
   * only the NotebookCard grid (data.map....) is higher level than that
   */
 
-
-
 function App() {
   // const [view, setView] = useState(0);
   // <Route exact path="/" render={() => <div>Home</div>} />
@@ -79,6 +77,7 @@ function App() {
   </div>
 </div>)
 
+        console.log("notebook: ", notebook)
   return (
     <Router>
       <Route exact path="/" render={() => defaultView } />
