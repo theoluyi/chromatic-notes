@@ -11,7 +11,7 @@ const NotePage = (props) => {
         <h2>Note Title</h2>
         <p>Creation Date</p>
       </div>
-      <br />
+      <br/>
       <div className="note-body">
         <MyEditor />
       </div>
