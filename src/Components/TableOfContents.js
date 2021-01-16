@@ -7,6 +7,7 @@ import "../Component_Styles/TableOfContents.css";
 const TableOfContents = (props) => {
   return (
     <div
+      className='table-of-contents'
       style={{
         width: "100%",
         height: "100%",
@@ -15,10 +16,10 @@ const TableOfContents = (props) => {
       <h1>Notebook Title</h1>
       <hr />
       <h2>Table of Contents</h2> <br />
-      <NotePreviewCard />
-      <NotePreviewCard />
-      <NotePreviewCard />
-      <NotePreviewCard />
+      <NotePreviewCard noteInfo={props.notes[0]}/>
+      <NotePreviewCard noteInfo={props.notes[1]}/>
+      <NotePreviewCard noteInfo={props.notes[2]}/>
+      <NotePreviewCard noteInfo={props.notes[3]}/>
       <br />
       <Button variant="transparent">+</Button> <br />
       <br />

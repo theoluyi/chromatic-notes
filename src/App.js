@@ -21,7 +21,7 @@ import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 
 // mock data 
-import data from "./data.js";
+import mockData from "./data.js";
 
 /**
  * it seems like within the routing bs I'm also going to have layer in 
@@ -54,16 +54,20 @@ function App() {
   // state hooks 
   const [displayedNotebook, setDisplayedNotebook] = useState('no-notebook-selected') // might be better to use numbers?
   const [user, setUser] = useState(false)
+  const [data, setData] = useState({})
 
+  // function down, invocation up
   const selectNotebook = notebookColor => {
     setDisplayedNotebook(notebookColor)
   }
 
+  // method for fake login w/out backend user persistence
   const mimicUserSignInAndUp = () => {
     setUser(true)
   }
 
-  console.log("displayedNotebook: ", displayedNotebook)
+  // console.log("displayedNotebook: ", displayedNotebook)
+  // console.log(mockData[1].notes)
 
   return (
     <Router>
@@ -72,7 +76,7 @@ function App() {
             <div className="left-side">
 
             {/* the whole right side grid is a NavGrid (i.e., a NavBar) */}
-              {(data.map((notebook) => (
+              {(mockData.map((notebook) => (
                 <NotebookCard
                   key={notebook.color}
                   color={notebook.color}
@@ -91,7 +95,7 @@ function App() {
                   : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
                 </div>
             )} />
-            <Route path="/dark-red" render={routerProps => <TableOfContents {...routerProps}  />}>
+            <Route path="/dark-red" render={routerProps => <TableOfContents {...routerProps} notes={mockData[1].notes} />}>
 
             </Route>
 
