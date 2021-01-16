@@ -70,7 +70,7 @@ function App() {
         <div className="row no-gutters">
           <div className="col-md-6 no-gutters">
             <div className="left-side">
-            
+
             {/* the whole right side grid is a NavGrid (i.e., a NavBar) */}
               {(data.map((notebook) => (
                 <NotebookCard
@@ -91,6 +91,9 @@ function App() {
                   : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
                 </div>
             )} />
+            <Route path="/dark-red" render={routerProps => <TableOfContents {...routerProps}  />}>
+
+            </Route>
 
                 
             </div>
