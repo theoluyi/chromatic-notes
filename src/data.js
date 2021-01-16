@@ -1,6 +1,6 @@
 const notebooks = [
   {
-    name: "Journal",
+    name: "Dark Blue",
     color: "dark-blue",
     notes: [
       {
@@ -30,7 +30,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Dreams",
+    name: "Dark Red",
     color: "dark-red",
     notes: [
       {
@@ -60,7 +60,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Work",
+    name: "Dark Green",
     color: "dark-green",
     notes: [
       {
@@ -90,7 +90,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Untitled 0",
+    name: "Blue",
     color: "blue",
     notes: [
       {
@@ -120,7 +120,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Untitled 1",
+    name: "Red",
     color: "red",
     notes: [
       {
@@ -150,7 +150,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Untitled 2",
+    name: "Green",
     color: "green",
     notes: [
       {
@@ -180,7 +180,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Untitled 3",
+    name: "Light Blue",
     color: "light-blue",
     notes: [
       {
@@ -210,7 +210,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Untitled 4",
+    name: "Light Red",
     color: "light-red",
     notes: [
       {
@@ -240,7 +240,7 @@ const notebooks = [
     ],
   },
   {
-    name: "Untitled 5",
+    name: "Light Green",
     color: "light-green",
     notes: [
       {

@@ -13,7 +13,7 @@ const NotePreviewCard = (props) => {
       <Card bg="transparent" text="light">
         <Card.Header>
           <Accordion.Toggle as={Button} variant="transparent" eventKey="0">
-            <span className="note-title">{note_title} <small>{date_created}</small></span>{" "}
+            <span className="note-title">{note_title} <br/><small>{date_created}</small></span>{" "}
           </Accordion.Toggle>
           <span>
             <Button variant="secondary">🖊</Button>{" "}

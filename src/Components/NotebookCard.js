@@ -12,7 +12,7 @@ const NotebookCard = (props) => {
   return (
     <div className="notebook-card" id={props.color} onClick={handleClick}>
       <NavLink to={`/${props.color}`}>
-        <p>{props.name}</p>
+        <p>{props.name}<br/>Notebook</p>
       </NavLink>
     </div>
   );

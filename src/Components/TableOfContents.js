@@ -5,7 +5,10 @@ import "../Component_Styles/TableOfContents.css";
 
 // QQ this hardcoded component uses inline styling
 const TableOfContents = (props) => {
-  console.log(props)
+  // console.log(props)
+  const capitalizedNotebookTitle = props.color.split('-').map(word => (word[0].toUpperCase()) + word.slice(1)).join(' ')
+  console.log(capitalizedNotebookTitle)
+  // const capitalizedNotebookTitle = (props.color.split('-').map(word => word.toUpperCase().join(' ')))
   return (
     <div
       className={`table-of-contents ${props.color}`}
@@ -14,7 +17,7 @@ const TableOfContents = (props) => {
         height: "100%",
       }}
     >
-      <h1>Notebook Title</h1>
+      <h1>{capitalizedNotebookTitle}</h1>
       <hr />
       <h2>Table of Contents</h2> <br />
       <NotePreviewCard noteInfo={props.notes[0]}/>
@@ -23,7 +26,6 @@ const TableOfContents = (props) => {
       <NotePreviewCard noteInfo={props.notes[3]}/>
       <br />
       <Button variant="transparent">+</Button> <br />
-      <br />
       <br />
       <Button variant="transparent">i</Button>
     </div>
