@@ -7,7 +7,6 @@ import {
   Link,
   useRouteMatch,
   useParams,
-  NavLink
 } from "react-router-dom";
 
 // Styling
@@ -47,11 +46,12 @@ import data from "./data.js";
   * only the NotebookCard grid (data.map....) is higher level than that
   */
 
-function App() {
-  // const [view, setView] = useState(0);
-  // <Route exact path="/" render={() => <div>Home</div>} />
-  // <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
+  // how about we commit to the user sign in process?
+  // instead of splitting between wanting a note playground without login and one with
+  // before we've done either?
 
+function App() {
+  // state hooks 
   const [displayedNotebook, setDisplayedNotebook] = useState('no-notebook-selected') // might be better to use numbers?
   const [user, setUser] = useState(false)
 
@@ -59,46 +59,35 @@ function App() {
     setDisplayedNotebook(notebookColor)
   }
 
-  const userNotebookNavGrid =  (data.map((notebook) => (
-    <NotebookCard
-      key={notebook.color}
-      color={notebook.color}
-      name={notebook.name}
-      selectNotebook={selectNotebook}
-    />)))
-  
-  const defaultNotebookNavGrid =  (data.map((notebook) => (
-    <NotebookCard
-      key={notebook.color}
-      color={notebook.color}
-      selectNotebook={selectNotebook}
-    />)))
-
   const mimicUserSignInAndUp = () => {
     setUser(true)
   }
-
-  const defaultView = ( <
-    div className="row no-gutters">
-      <div className="col-md-6 no-gutters">
-        <div className="left-side">
-          {user? userNotebookNavGrid : defaultNotebookNavGrid}
-        </div>
-      </div>
-      <div className="col-md-6 no-gutters">
-        <div className="right-side">
-            { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
-            : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
-        </div>
-      </div>
-    </div>
-  )
 
   console.log("displayedNotebook: ", displayedNotebook)
 
   return (
     <Router>
-      <Route exact path="/" render={() => defaultView } />
+      <Route exact path="/" render={() => ( 
+        <div className="row no-gutters">
+          <div className="col-md-6 no-gutters">
+            <div className="left-side">
+              {(data.map((notebook) => (
+                <NotebookCard
+                  key={notebook.color}
+                  color={notebook.color}
+                  name={user? notebook.name : null}
+                  selectNotebook={selectNotebook}
+                />)))}
+            </div>
+          </div>
+          <div className="col-md-6 no-gutters">
+            <div className="right-side">
+                { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
+                : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
+            </div>
+          </div>
+        </div>
+      )} /> 
       {/* next feature to implement is below */}
       {/* <Route path='/:notebook' render={routerProps => <TableOfContents {...routerProps} notes={this.state.notes}/>} /> */}
       {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
