@@ -8,7 +8,7 @@ const TableOfContents = (props) => {
   console.log(props)
   return (
     <div
-      className='table-of-contents'
+      className={`table-of-contents ${props.color}`}
       style={{
         width: "100%",
         height: "100%",

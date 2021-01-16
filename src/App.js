@@ -54,7 +54,7 @@ function App() {
   // state hooks 
   const [displayedNotebook, setDisplayedNotebook] = useState('no-notebook-selected') // might be better to use numbers?
   const [user, setUser] = useState(false)
-  const [data, setData] = useState({})
+  // const [data, setData] = useState({})
 
   // function down, invocation up
   const selectNotebook = notebookColor => {
@@ -97,7 +97,7 @@ function App() {
                   <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
                 </div>
             )} />
-            <Route path="/dark-red" render={routerProps => <TableOfContents {...routerProps} notes={mockData[1].notes} />}>
+            <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />}>
 
             </Route>
 
