@@ -67,10 +67,11 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/" render={() => ( 
         <div className="row no-gutters">
           <div className="col-md-6 no-gutters">
             <div className="left-side">
+            
+            {/* the whole right side grid is a NavGrid (i.e., a NavBar) */}
               {(data.map((notebook) => (
                 <NotebookCard
                   key={notebook.color}
@@ -82,12 +83,19 @@ function App() {
           </div>
           <div className="col-md-6 no-gutters">
             <div className="right-side">
-                { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
-                : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
+
+            <Route exact path="/" render={() => (
+                <div className="auth-and-empty-desk-views"> 
+                  {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
+                  { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
+                  : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
+                </div>
+            )} />
+
+                
             </div>
           </div>
         </div>
-      )} /> 
       {/* next feature to implement is below */}
       {/* <Route path='/:notebook' render={routerProps => <TableOfContents {...routerProps} notes={this.state.notes}/>} /> */}
       {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
