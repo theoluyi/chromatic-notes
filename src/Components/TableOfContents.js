@@ -5,6 +5,7 @@ import "../Component_Styles/TableOfContents.css";
 
 // QQ this hardcoded component uses inline styling
 const TableOfContents = (props) => {
+  console.log(props)
   return (
     <div
       className='table-of-contents'

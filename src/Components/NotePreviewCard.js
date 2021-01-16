@@ -6,7 +6,7 @@ import "../Component_Styles/NotePreviewCard.css";
 
 // QQ this hardcoded component uses inline styling
 const NotePreviewCard = (props) => {
-  console.log(props.noteInfo)
+  // console.log(props.noteInfo)
   const {date_created, note_text, note_title} = props.noteInfo;
   return (
     <Accordion>

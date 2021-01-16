@@ -80,7 +80,8 @@ function App() {
                 <NotebookCard
                   key={notebook.color}
                   color={notebook.color}
-                  name={user? notebook.name : null}
+                  // name={user? notebook.name : null}
+                  name={notebook.name}
                   selectNotebook={selectNotebook}
                 />)))}
             </div>
@@ -91,8 +92,9 @@ function App() {
             <Route exact path="/" render={() => (
                 <div className="auth-and-empty-desk-views"> 
                   {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
-                  { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
-                  : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> }
+                  {/* { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
+                  : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> } */}
+                  <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
                 </div>
             )} />
             <Route path="/dark-red" render={routerProps => <TableOfContents {...routerProps} notes={mockData[1].notes} />}>
