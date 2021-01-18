@@ -5,11 +5,10 @@ import "../Component_Styles/TableOfContents.css";
 
 // QQ this hardcoded component uses inline styling
 const TableOfContents = (props) => {
-  // console.log(props)
-  const capitalizedNotebookTitle = props.color.split('-').map(word => (word[0].toUpperCase()) + word.slice(1)).join(' ')
-  console.log(capitalizedNotebookTitle)
-  // const capitalizedNotebookTitle = (props.color.split('-').map(word => word.toUpperCase().join(' ')))
-  return (
+  const capitalizedNotebookTitle = props.color.split('-').map(
+    word => (word[0].toUpperCase()) + word.slice(1)).join(' ')
+
+    return (
     <div
       className={`table-of-contents ${props.color}`}
       style={{
