@@ -4,16 +4,15 @@ import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
 import "../Component_Styles/NotePreviewCard.css";
 
-// QQ this hardcoded component uses inline styling
+// QQ: uses inline styling
 const NotePreviewCard = (props) => {
-  // console.log(props.noteInfo)
   const {date_created, note_text, note_title} = props.noteInfo;
   return (
     <Accordion>
       <Card bg="transparent" text="light">
         <Card.Header>
           <Accordion.Toggle as={Button} variant="transparent" eventKey="0">
-            <span className="note-title">{note_title} <br/><small>{date_created}</small></span>{" "}
+            <span className="note-title">{note_title} <br /> <small>{date_created}</small></span>{" "}
           </Accordion.Toggle>
           <span>
             <Button variant="secondary">🖊</Button>{" "}

@@ -3,16 +3,16 @@ import NotePreviewCard from "./NotePreviewCard";
 import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
 
-// QQ this component uses inline styling
+// QQ: uses inline styling
 const TableOfContents = (props) => {
   const capitalizedNotebookTitle = props.color.split('-').map(
     word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
-  const everyNote = props.notes.map (
-    note => <NotePreviewCard noteInfo={note} />
+  const thisNotebookzNotes = props.notes.map (
+    noteInfo => <NotePreviewCard noteInfo={noteInfo} />
   )
 
-    return (
+  return (
     <div
       className={`table-of-contents ${props.color}`}
       style={{
@@ -24,7 +24,7 @@ const TableOfContents = (props) => {
       <hr />
       <h2>Table of Contents</h2> 
       <br />
-        {everyNote}
+        {thisNotebookzNotes}
       <br />
       <Button variant="transparent">+</Button> 
       <br />

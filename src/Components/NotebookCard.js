@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import "../Component_Styles/NotebookCard.css";
 
 const NotebookCard = (props) => {
+  // console.log(props)
   
   const handleClick = e => {
     console.log(`I am the ${props.color} NotebookCard, you clicked me.`)

@@ -66,8 +66,9 @@ function App() {
     setUser(true)
   }
 
-  // console.log("displayedNotebook: ", displayedNotebook)
-  // console.log(mockData[1].notes)
+  const colorsArray = [];
+  mockData.forEach((notebookInfo => colorsArray.push(notebookInfo.color)) );
+  console.log(colorsArray);
 
   return (
     <Router>
