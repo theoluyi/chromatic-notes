@@ -8,7 +8,7 @@ const TableOfContents = (props) => {
   const capitalizedNotebookTitle = props.color.split('-').map(
     word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
-  const thisNotebookzNotes = props.notes.map (
+  const thisNotebooksNotes = props.notes.map (
     noteInfo => <NotePreviewCard noteInfo={noteInfo} />
   )
 
@@ -24,7 +24,7 @@ const TableOfContents = (props) => {
       <hr />
       <h2>Table of Contents</h2> 
       <br />
-        {thisNotebookzNotes}
+        {thisNotebooksNotes}
       <br />
       <Button variant="transparent">+</Button> 
       <br />
