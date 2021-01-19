@@ -67,7 +67,15 @@ function App() {
   }
 
   const colorsArray = [];
-  mockData.forEach((notebookInfo => colorsArray.push(notebookInfo.color)) );
+  mockData.forEach((notebookInfo => colorsArray.push({color: notebookInfo.color, notes: notebookInfo.notes})) );
+  // mockData.forEach((notebookInfo => console.log(notebookInfo.notes)) );
+  console.log(colorsArray)
+
+  const allTableOfContents = mockData.map(
+    notebookInfo => <Route 
+      path={`/${notebookInfo.color}`} 
+      render={routerProps => <TableOfContents color={notebookInfo.color} {...routerProps} notes={notebookInfo.notes} /> } 
+    />)
 
   // const allNotebookRoutes = 
   // <Route path="/dark-red" render={
@@ -94,26 +102,25 @@ function App() {
           </div>
           <div className="col-md-6 no-gutters">
             <div className="right-side">
+              <Route exact path="/" render={() => (
+                  <div className="auth-and-empty-desk-views"> 
+                    {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
+                    {/* { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
+                    : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> } */}
+                    <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
+                  </div>
+              )} />
 
-            <Route exact path="/" render={() => (
-                <div className="auth-and-empty-desk-views"> 
-                  {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
-                  {/* { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
-                  : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> } */}
-                  <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
-                </div>
-            )} />
-            <Route path="/dark-blue" render={routerProps => <TableOfContents color="dark-blue" {...routerProps} notes={mockData[0].notes} />} />
-            <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />} />
-            <Route path="/dark-green" render={routerProps => <TableOfContents color="dark-green" {...routerProps} notes={mockData[2].notes} />} />
-            <Route path="/blue" render={routerProps => <TableOfContents color="blue" {...routerProps} notes={mockData[3].notes} />} />
-            <Route path="/red" render={routerProps => <TableOfContents color="red" {...routerProps} notes={mockData[4].notes} />} />
-            <Route path="/green" render={routerProps => <TableOfContents color="green" {...routerProps} notes={mockData[5].notes} />} />
-            <Route path="/light-blue" render={routerProps => <TableOfContents color="light-blue" {...routerProps} notes={mockData[6].notes} />} />
-            <Route path="/light-red" render={routerProps => <TableOfContents color="light-red" {...routerProps} notes={mockData[7].notes} />} />
-            <Route path="/light-green" render={routerProps => <TableOfContents color="light-green" {...routerProps} notes={mockData[8].notes} />} />
-
-                
+              {allTableOfContents}
+              {/* <Route path="/dark-blue" render={routerProps => <TableOfContents color="dark-blue" {...routerProps} notes={mockData[0].notes} />} />
+              <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />} />
+              <Route path="/dark-green" render={routerProps => <TableOfContents color="dark-green" {...routerProps} notes={mockData[2].notes} />} />
+              <Route path="/blue" render={routerProps => <TableOfContents color="blue" {...routerProps} notes={mockData[3].notes} />} />
+              <Route path="/red" render={routerProps => <TableOfContents color="red" {...routerProps} notes={mockData[4].notes} />} />
+              <Route path="/green" render={routerProps => <TableOfContents color="green" {...routerProps} notes={mockData[5].notes} />} />
+              <Route path="/light-blue" render={routerProps => <TableOfContents color="light-blue" {...routerProps} notes={mockData[6].notes} />} />
+              <Route path="/light-red" render={routerProps => <TableOfContents color="light-red" {...routerProps} notes={mockData[7].notes} />} />
+              <Route path="/light-green" render={routerProps => <TableOfContents color="light-green" {...routerProps} notes={mockData[8].notes} />} />                 */}
             </div>
           </div>
         </div>
