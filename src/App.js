@@ -45,7 +45,6 @@ import mockData from "./data.js";
   * which means that every right side component should be at the same level of rendering hierarchy
   * only the NotebookCard grid (data.map....) is higher level than that
   */
-
   // how about we commit to the user sign in process?
   // instead of splitting between wanting a note playground without login and one with
   // before we've done either?
@@ -71,17 +70,13 @@ function App() {
   // mockData.forEach((notebookInfo => console.log(notebookInfo.notes)) );
   console.log(colorsArray)
 
-  const allTableOfContents = mockData.map(
+  const nineTableOfContentsRoutes = mockData.map(
     notebookInfo => <Route 
       path={`/${notebookInfo.color}`} 
       render={routerProps => <TableOfContents color={notebookInfo.color} {...routerProps} notes={notebookInfo.notes} /> } 
     />)
 
-  // const allNotebookRoutes = 
-  // <Route path="/dark-red" render={
-  //   routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />
-  //   }>
-
+  // const allNotebookRoutes = <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />}>
 
   return (
     <Router>
@@ -101,6 +96,7 @@ function App() {
             </div>
           </div>
           <div className="col-md-6 no-gutters">
+
             <div className="right-side">
               <Route exact path="/" render={() => (
                   <div className="auth-and-empty-desk-views"> 
@@ -110,23 +106,11 @@ function App() {
                     <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
                   </div>
               )} />
-
-              {allTableOfContents}
-              {/* <Route path="/dark-blue" render={routerProps => <TableOfContents color="dark-blue" {...routerProps} notes={mockData[0].notes} />} />
-              <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />} />
-              <Route path="/dark-green" render={routerProps => <TableOfContents color="dark-green" {...routerProps} notes={mockData[2].notes} />} />
-              <Route path="/blue" render={routerProps => <TableOfContents color="blue" {...routerProps} notes={mockData[3].notes} />} />
-              <Route path="/red" render={routerProps => <TableOfContents color="red" {...routerProps} notes={mockData[4].notes} />} />
-              <Route path="/green" render={routerProps => <TableOfContents color="green" {...routerProps} notes={mockData[5].notes} />} />
-              <Route path="/light-blue" render={routerProps => <TableOfContents color="light-blue" {...routerProps} notes={mockData[6].notes} />} />
-              <Route path="/light-red" render={routerProps => <TableOfContents color="light-red" {...routerProps} notes={mockData[7].notes} />} />
-              <Route path="/light-green" render={routerProps => <TableOfContents color="light-green" {...routerProps} notes={mockData[8].notes} />} />                 */}
+              {nineTableOfContentsRoutes}
             </div>
+
           </div>
         </div>
-      {/* next feature to implement is below */}
-      {/* <Route path='/:notebook' render={routerProps => <TableOfContents {...routerProps} notes={this.state.notes}/>} /> */}
-      {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
     </Router>
   );
 }
