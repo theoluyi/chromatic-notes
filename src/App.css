@@ -12,9 +12,6 @@
 }
 
 .right-side {
-  /* background: whitesmoke;
-  background-color: #6581e4; */
-  /* padding: 1rem; */
   border: solid whitesmoke 0.25rem;
   color: whitesmoke;
   text-align: center;
@@ -24,9 +21,6 @@
   height: 100vh;
   background: whitesmoke;
   display: grid;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
@@ -100,7 +94,3 @@
 .light-green {
   background: #99eca6;
 }
-
-/* .card-header {
-  color: red;
-} */
