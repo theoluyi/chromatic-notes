@@ -68,7 +68,12 @@ function App() {
 
   const colorsArray = [];
   mockData.forEach((notebookInfo => colorsArray.push(notebookInfo.color)) );
-  console.log(colorsArray);
+
+  // const allNotebookRoutes = 
+  // <Route path="/dark-red" render={
+  //   routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />
+  //   }>
+
 
   return (
     <Router>
@@ -98,9 +103,15 @@ function App() {
                   <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
                 </div>
             )} />
-            <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />}>
-
-            </Route>
+            <Route path="/dark-blue" render={routerProps => <TableOfContents color="dark-blue" {...routerProps} notes={mockData[0].notes} />} />
+            <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />} />
+            <Route path="/dark-green" render={routerProps => <TableOfContents color="dark-green" {...routerProps} notes={mockData[2].notes} />} />
+            <Route path="/blue" render={routerProps => <TableOfContents color="blue" {...routerProps} notes={mockData[3].notes} />} />
+            <Route path="/red" render={routerProps => <TableOfContents color="red" {...routerProps} notes={mockData[4].notes} />} />
+            <Route path="/green" render={routerProps => <TableOfContents color="green" {...routerProps} notes={mockData[5].notes} />} />
+            <Route path="/light-blue" render={routerProps => <TableOfContents color="light-blue" {...routerProps} notes={mockData[6].notes} />} />
+            <Route path="/light-red" render={routerProps => <TableOfContents color="light-red" {...routerProps} notes={mockData[7].notes} />} />
+            <Route path="/light-green" render={routerProps => <TableOfContents color="light-green" {...routerProps} notes={mockData[8].notes} />} />
 
                 
             </div>
