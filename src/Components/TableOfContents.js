@@ -20,11 +20,11 @@ const TableOfContents = (props) => {
         height: "100%",
       }}
     >
-      <h1>{capitalizedNotebookTitle}</h1>
+      <h1> { capitalizedNotebookTitle } </h1>
       <hr />
       <h2>Table of Contents</h2> 
       <br />
-        {thisNotebooksNotes}
+        { thisNotebooksNotes }
       <br />
       <Button variant="transparent">+</Button> 
       <br />

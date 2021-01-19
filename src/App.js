@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+//  Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams,
+//  Link,
+//  useRouteMatch,
+//  useParams,
 } from "react-router-dom";
 
 // Styling
@@ -65,34 +65,29 @@ function App() {
     setUser(true)
   }
 
-  const colorsArray = [];
-  mockData.forEach((notebookInfo => colorsArray.push({color: notebookInfo.color, notes: notebookInfo.notes})) );
-  // mockData.forEach((notebookInfo => console.log(notebookInfo.notes)) );
-  console.log(colorsArray)
+  // name={user? notebook.name : null}
+  const nineNotebookCards = mockData.map(
+    notebook =>  <NotebookCard
+      key={notebook.color}
+      color={notebook.color}
+      name={notebook.name}
+      selectNotebook={selectNotebook}
+    />
+  )
 
   const nineTableOfContentsRoutes = mockData.map(
     notebookInfo => <Route 
       path={`/${notebookInfo.color}`} 
       render={routerProps => <TableOfContents color={notebookInfo.color} {...routerProps} notes={notebookInfo.notes} /> } 
-    />)
-
-  // const allNotebookRoutes = <Route path="/dark-red" render={routerProps => <TableOfContents color="dark-red" {...routerProps} notes={mockData[1].notes} />}>
+    />
+  )
 
   return (
     <Router>
         <div className="row no-gutters">
           <div className="col-md-6 no-gutters">
             <div className="left-side">
-
-            {/* the whole right side grid is a NavGrid (i.e., a NavBar) */}
-              {(mockData.map((notebook) => (
-                <NotebookCard
-                  key={notebook.color}
-                  color={notebook.color}
-                  // name={user? notebook.name : null}
-                  name={notebook.name}
-                  selectNotebook={selectNotebook}
-                />)))}
+              {nineNotebookCards}
             </div>
           </div>
           <div className="col-md-6 no-gutters">
@@ -101,14 +96,11 @@ function App() {
               <Route exact path="/" render={() => (
                   <div className="auth-and-empty-desk-views"> 
                     {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
-                    {/* { user? <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> 
-                    : <PleaseSignInView mimicUserSignInAndUp={mimicUserSignInAndUp}/> } */}
                     <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
                   </div>
-              )} />
+              )}/>
               {nineTableOfContentsRoutes}
             </div>
-
           </div>
         </div>
     </Router>
