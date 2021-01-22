@@ -66,7 +66,7 @@ function App() {
   }
 
   // name={user? notebook.name : null}
-  const nineNotebookCards = mockData.map(
+  const navGridNotebooks = mockData.map(
     notebook =>  <NotebookCard
       key={notebook.color}
       color={notebook.color}
@@ -87,7 +87,7 @@ function App() {
         <div className="row no-gutters">
           <div className="col-md-6 no-gutters">
             <div className="left-side">
-              {nineNotebookCards}
+              {navGridNotebooks}
             </div>
           </div>
           <div className="col-md-6 no-gutters">
