@@ -8,9 +8,11 @@ const TableOfContents = (props) => {
   const capitalizedNotebookTitle = props.color.split('-').map(
     word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
-  const thisNotebooksNotes = props.notes.map (
-    noteInfo => <NotePreviewCard noteInfo={noteInfo} />
-  )
+  const thisNotebooksNotes = props.notes.map ( (noteInfo, idx) => 
+    <NotePreviewCard key={idx} id={idx} noteInfo={noteInfo} props={props}/>
+  );
+
+  console.log(props)
 
   return (
     <div
@@ -20,7 +22,7 @@ const TableOfContents = (props) => {
         height: "100%",
       }}
     >
-      <h1> { capitalizedNotebookTitle } </h1>
+      <h1> { 'The '+ capitalizedNotebookTitle + ' Notebook' } </h1>
       <hr />
       <h2>Table of Contents</h2> 
       <br />

@@ -1,7 +1,7 @@
 // React
 import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
 //  Switch,
   Route,
 //  Link,
@@ -83,7 +83,7 @@ function App() {
   )
 
   return (
-    <Router>
+    <BrowserRouter>
         <div className="row no-gutters">
           <div className="col-md-6 no-gutters">
             <div className="left-side">
@@ -103,7 +103,7 @@ function App() {
             </div>
           </div>
         </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
