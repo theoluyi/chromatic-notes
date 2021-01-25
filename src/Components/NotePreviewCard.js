@@ -7,9 +7,11 @@ import "../Component_Styles/NotePreviewCard.css";
 // QQ: uses inline styling
 const NotePreviewCard = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
+  const {match, location} = props;
 
-  const handleClick = () => {
-    console.log("props ", props)
+  const handleEditNoteClick = () => {
+    props.selectNote()
+    console.log("My props are: ", props)
   }
 
   return (
@@ -20,8 +22,7 @@ const NotePreviewCard = (props) => {
             <span className="note-title">{note_title} <br /> <small>{date_created}</small></span>{" "}
           </Accordion.Toggle>
           <span>
-            {/* <Button variant="secondary">🖊</Button>{" "} */}
-            <Button variant="secondary" onClick={handleClick}>📖</Button>{" "}
+            <Button variant="secondary" onClick={handleEditNoteClick}>📖</Button>{" "}
             <Button variant="dark">🗑</Button>
           </span>
           <span>1-10</span>

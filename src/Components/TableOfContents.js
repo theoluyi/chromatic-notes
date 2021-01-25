@@ -13,14 +13,13 @@ const TableOfContents = (props) => {
       key={idx} 
       id={idx} 
       noteInfo={noteInfo} 
-      props={props}
+      match={props.match}
+      location={props.location}
       selectNote={props.selectNote}
     />
   );
 
-
-
-  console.log(props)
+  // console.log(props)
 
   return (  
     <div
