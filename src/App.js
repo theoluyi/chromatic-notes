@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import {
   BrowserRouter,
-//  Switch,
+ Switch,
   Route,
 //  Link,
 //  useRouteMatch,
@@ -93,13 +93,15 @@ function App() {
           <div className="col-md-6 no-gutters">
 
             <div className="right-side">
-              <Route exact path="/" render={() => (
-                  <div className="auth-and-empty-desk-views"> 
-                    {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
-                    <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
-                  </div>
-              )}/>
-              {nineTableOfContentsRoutes}
+              <Switch>
+                <Route exact path="/" render={() => (
+                    <div className="auth-and-empty-desk-views"> 
+                      {/* className="auth-and-empty-desk-views" is a reminder that these views don't naturally pair up */}
+                      <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
+                    </div>
+                )}/>
+                {nineTableOfContentsRoutes}
+              </Switch>
             </div>
           </div>
         </div>
