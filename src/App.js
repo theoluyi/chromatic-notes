@@ -60,6 +60,10 @@ function App() {
     setDisplayedNotebook(notebookColor)
   }
 
+  const selectNote = note => {
+    console.log("hello from app.js")
+  }
+
   // method for fake login w/out backend user persistence
   const mimicUserSignInAndUp = () => {
     setUser(true)
@@ -78,7 +82,12 @@ function App() {
   const nineTableOfContentsRoutes = mockData.map(
     notebookInfo => <Route 
       path={`/${notebookInfo.color}`} 
-      render={routerProps => <TableOfContents color={notebookInfo.color} {...routerProps} notes={notebookInfo.notes} /> } 
+      render={routerProps => <TableOfContents 
+        {...routerProps} 
+        color={notebookInfo.color} 
+        notes={notebookInfo.notes}       
+        selectNote={selectNote}
+      />} 
     />
   )
 
@@ -100,6 +109,7 @@ function App() {
                       <SignedInView mimicUserSignInAndUp={mimicUserSignInAndUp}/>
                     </div>
                 )}/>
+                {/* nine routes with routerProps passed in */}
                 {nineTableOfContentsRoutes}
               </Switch>
             </div>

@@ -9,12 +9,20 @@ const TableOfContents = (props) => {
     word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
   const thisNotebooksNotes = props.notes.map ( (noteInfo, idx) => 
-    <NotePreviewCard key={idx} id={idx} noteInfo={noteInfo} props={props}/>
+    <NotePreviewCard 
+      key={idx} 
+      id={idx} 
+      noteInfo={noteInfo} 
+      props={props}
+      selectNote={props.selectNote}
+    />
   );
+
+
 
   console.log(props)
 
-  return (
+  return (  
     <div
       className={`table-of-contents ${props.color}`}
       style={{
