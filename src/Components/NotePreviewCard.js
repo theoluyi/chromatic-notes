@@ -5,14 +5,14 @@ import Accordion from "react-bootstrap/Accordion";
 import "../Component_Styles/NotePreviewCard.css";
 import {
   Link,
-  useRouteMatch,
-  useParams,
+  // useRouteMatch,
+  // useParams,
 } from "react-router-dom";
 
 // QQ: uses inline styling
 const NotePreviewCard = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
-  const {match, location} = props;
+  const {match} = props;
 
   const handleEditNoteClick = () => {
     props.selectNote()
@@ -29,7 +29,7 @@ const NotePreviewCard = (props) => {
           <span>
             <Button variant="secondary" onClick={handleEditNoteClick}>
             {/* new stuff right here with this link */}
-              <Link to={`${match.url}/xoxo`}>📖 </Link>
+              <Link to={`${match.url}/${props.id}`}>📖 </Link>
             </Button>{" "}
             <Button variant="dark">🗑</Button>
           </span>

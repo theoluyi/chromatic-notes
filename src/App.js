@@ -6,8 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 // Components
 import NotebookCard from "./Components/NotebookCard";
-import NotePage from "./Components/NotePage";
-import PleaseSignInView from "./Components/PleaseSignInView";
+// Unused Components
+// import NotePage from "./Components/NotePage";
+// import PleaseSignInView from "./Components/PleaseSignInView";
 import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 // mock data 
