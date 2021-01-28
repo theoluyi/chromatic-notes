@@ -33,6 +33,7 @@ const TableOfContents = (props) => {
           noteInfo={noteInfo}
           match={props.match}
           location={props.location}
+          color={props.color}
         /> 
       }/>
     );
