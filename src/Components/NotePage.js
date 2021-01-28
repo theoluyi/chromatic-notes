@@ -4,15 +4,18 @@ import "draft-js/dist/Draft.css";
 import "../Component_Styles/NotePage.css";
 
 const NotePage = (props) => {
-  console.log(props.color)
+  const {date_created, note_text, note_title} = props.noteInfo;
+  const {color} = props
+
   return (
-    <div className={`note-page ${props.color}`}>
+    <div className={`note-page ${color}`}>
       <div className="note-info">
-        <h2>Note Title</h2>
-        <p>Creation Date</p>
+        <h2>{note_title}</h2>
+        <p>{date_created}</p>
       </div>
       <br/>
       <div className="note-body">
+        <p>{note_text}</p>
         <MyEditor />
       </div>
     </div>
