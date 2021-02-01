@@ -25,9 +25,10 @@ function App() {
     setDisplayedNotebook(notebookColor)
   }
 
-  const selectNote = note => {
-    console.log("hello from app.js")
-  }
+  // this should be in TableOfContents
+  // const selectNote = note => {
+  //   console.log("hello from app.js")
+  // }
 
     // method for fake login w/out backend user persistence
   const mimicUserSignInAndUp = () => {
@@ -50,8 +51,9 @@ function App() {
       render={routerProps => <TableOfContents 
         {...routerProps} 
         color={notebookInfo.color} 
-        notes={notebookInfo.notes}       
-        selectNote={selectNote}
+        notes={notebookInfo.notes}   
+        // this should be in TableOfContents, not App.js
+        // selectNote={selectNote}
       />} 
     />
   )
