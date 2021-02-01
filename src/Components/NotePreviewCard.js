@@ -3,19 +3,15 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
 import "../Component_Styles/NotePreviewCard.css";
-import {
-  Link,
-  // useRouteMatch,
-  // useParams,
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // QQ: uses inline styling
 const NotePreviewCard = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
   const {match} = props;
 
-  const handleButtonClick = ( event ) => {
-    props.selectNote();
+  const handleButtonClick = ( ) => {
+    props.selectNote(props.noteInfo);
     console.log("Hello from NotePreviewCard, my props.noteInfo are: ", props.noteInfo)
   }
 

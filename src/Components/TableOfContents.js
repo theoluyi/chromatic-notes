@@ -10,14 +10,16 @@ import { Switch, Route } from "react-router-dom";
 // QQ: uses inline styling
 const TableOfContents = (props) => {
   const [notePage, setNotePage] = useState(null);
+  // adding a hook to enable cond-rend of notePage vs notesList
+  const [displayNote, setDisplayNote] = useState(false);
 
   const selectNote = note => {
       console.log("Hello from TableOfContents Component. I am invoking setNotePage.")
-      
+      setNotePage(note)
       console.log("notePage should now be set to the noteInfo props of the note whose button was pressed.")
   }
 
-  const thisNotebooksNotes = props.notes.map ( (noteInfo, idx) => 
+  const notesList = props.notes.map ( (noteInfo, idx) => 
     <NotePreviewCard
       key={idx}
       id={idx}
@@ -29,6 +31,8 @@ const TableOfContents = (props) => {
   );
   
   // ⬇️ new stuff； not sure about route path syntax (template literal looks hmmmm to me)
+  // noteInfo below is null, so the problem must trace back earlier.
+  // time to check the value of the props in handleButtonClick
   const notePages = props.notes.map ( (noteInfo, idx) =>
     <Route path={`${props.match.url}/:noteId`} render={routerProps =>       
       <NotePage
@@ -45,6 +49,7 @@ const TableOfContents = (props) => {
   // ⬆️ new stuff
     
   // console.log(props)
+  console.log(notePages)
 
   const capitalizedNotebookTitle = props.color.split('-').map( word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
@@ -58,14 +63,14 @@ const TableOfContents = (props) => {
           }}
         >
           <h1> { 'The '+ capitalizedNotebookTitle + ' Notebook' } </h1>
-          <hr />
+          <hr/>
           <h2>Table of Contents</h2> 
-          <br />
-            { thisNotebooksNotes }
-          <br />
+          <br/>
+            { notesList }
+          <br/>
           <Button variant="transparent">+</Button> 
-          <br />
-          <br />
+          <br/>
+          <br/>
           <Button variant="transparent">i</Button>
         </div>} />
       {notePages}

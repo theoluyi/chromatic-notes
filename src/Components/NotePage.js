@@ -6,6 +6,8 @@ import "../Component_Styles/NotePage.css";
 const NotePage = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
   const {color} = props
+  console.log("Hello from NotePage component, my props are: ", props)
+  console.log("date_created ", props)
 
   return (
     <div className={`note-page ${color}`}>
