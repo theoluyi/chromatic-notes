@@ -12,7 +12,7 @@ const NotePreviewCard = (props) => {
 
   const handleButtonClick = ( ) => {
     props.selectNote(props.noteInfo);
-    console.log("Hello from NotePreviewCard, my props.noteInfo are: ", props.noteInfo)
+    // console.log("Hello from NotePreviewCard, my props.noteInfo are: ", props.noteInfo)
   }
 
   return (

@@ -5,13 +5,16 @@ import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
 
 // ⬇️ new stuff
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useParams, useRouteMatch} from "react-router-dom";
 
 // QQ: uses inline styling
 const TableOfContents = (props) => {
   const [notePage, setNotePage] = useState(null);
   // adding a hook to enable cond-rend of notePage vs notesList
   const [displayNote, setDisplayNote] = useState(false);
+
+  // match appears to be fine, correct object
+  // console.log(props.match)
 
   const selectNote = note => {
       console.log("Hello from TableOfContents Component. I am invoking setNotePage.")
@@ -31,25 +34,30 @@ const TableOfContents = (props) => {
   );
   
   // ⬇️ new stuff； not sure about route path syntax (template literal looks hmmmm to me)
-  // noteInfo below is null, so the problem must trace back earlier.
+  // noteInfo below is Note 1: PostgreSQL
   // time to check the value of the props in handleButtonClick
-  const notePages = props.notes.map ( (noteInfo, idx) =>
-    <Route path={`${props.match.url}/:noteId`} render={routerProps =>       
-      <NotePage
-        {...routerProps}
-        key={idx}
-        id={idx}
-        noteInfo={noteInfo}
-        match={props.match}
-        location={props.location}
-        color={props.color}
-      /> 
+
+
+  const noteView = (
+    <Route 
+      path={`${props.match.url}/:noteId`} 
+      render={routerProps =>
+        <NotePage
+          {...routerProps}
+          // we should know here what the id is so we can pass it in as key + id
+          // but having trouble getting access to params at this layer
+          // key={idx}
+          // id={idx}
+          color={props.color}
+          notes={props.notes}
+          // match={props.match}
+          // params={props.match.params}
+        /> 
     }/>
-  );
-  // ⬆️ new stuff
+  )
     
   // console.log(props)
-  console.log(notePages)
+  // console.log(notePages)
 
   const capitalizedNotebookTitle = props.color.split('-').map( word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
@@ -72,10 +80,25 @@ const TableOfContents = (props) => {
           <br/>
           <br/>
           <Button variant="transparent">i</Button>
-        </div>} />
-      {notePages}
+        </div>} />  {/* end of render prop */}
+      {noteView}
     </Switch>
   );
 };
 
+// CLONE OF THIS BEFORE reworking into a single component which filters
+// const notePages = props.notes.map ( (noteInfo, idx) =>
+// <Route path={`${props.match.url}/:noteId`} render={routerProps =>       
+//   <NotePage
+//     {...routerProps}
+//     key={idx}
+//     id={idx}
+//     noteInfo={noteInfo}
+//     match={props.match}
+//     location={props.location}
+//     color={props.color}
+//   /> 
+// }/>
+// );
+// // ⬆️ new stuff
 export default TableOfContents;
