@@ -21,8 +21,12 @@ const NotePage = (props) => {
   
   let noteId = useParams();
   console.log(noteId);
-  
 
+  console.log(props.notes)
+
+  // let myNote = props.notes.filter(note => note.id === noteId)
+  // console.log(myNote)
+  
   // console.log(props.params)
 
   return (
