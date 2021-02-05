@@ -32,11 +32,6 @@ const TableOfContents = (props) => {
       selectNote={selectNote}
     />
   );
-  
-  // ⬇️ new stuff； not sure about route path syntax (template literal looks hmmmm to me)
-  // noteInfo below is Note 1: PostgreSQL
-  // time to check the value of the props in handleButtonClick
-
 
   const noteView = (
     <Route 
@@ -55,9 +50,6 @@ const TableOfContents = (props) => {
         /> 
     }/>
   )
-    
-  // console.log(props)
-  // console.log(notePages)
 
   const capitalizedNotebookTitle = props.color.split('-').map( word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 

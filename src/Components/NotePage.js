@@ -5,29 +5,25 @@ import "../Component_Styles/NotePage.css";
 
 import {useParams} from "react-router-dom"
 
-const NotePage = (props) => {
-  // const {date_created, note_text, note_title} = props.noteInfo;
-  const color = props.color
-  // console.log("Hello from NotePage component, my props are: ", props)
-  // console.log("date_created ", props)
-  // console.log(noteInfo)
-
   // this could easily be the solution if we want to pass down the whole array of notes
   // and then just filter by ID. I feel like this should be a dumb as fuck component
   // though so it shouldn't have to do so much logic.
   // I want to see if we can get params in TOC instead of here.
   // Then we can just filter and render a single Route there... Not sure
   // if that saves many lines of code though but.... 
-  
-  let noteId = useParams();
-  console.log(noteId);
 
-  console.log(props.notes)
+const NotePage = (props) => {
+  const color = props.color
+  let noteId = useParams().noteId;
+  console.log("noteId: ", noteId)
 
-  // let myNote = props.notes.filter(note => note.id === noteId)
-  // console.log(myNote)
-  
-  // console.log(props.params)
+  const testNoteId = props.notes[0].note_id
+  console.log("testNoteId: ", testNoteId)
+
+  let myNote = props.notes.filter(note => Number(note.note_id) == Number(noteId+1))
+  console.log(myNote)
+
+  // const {date_created, note_text, note_title}
 
   return (
     <div className={`note-page ${color}`}>

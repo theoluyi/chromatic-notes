@@ -10,10 +10,10 @@ const NotePreviewCard = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
   const {match} = props;
 
-  const handleButtonClick = ( ) => {
-    props.selectNote(props.noteInfo);
-    // console.log("Hello from NotePreviewCard, my props.noteInfo are: ", props.noteInfo)
-  }
+  // const handleButtonClick = ( ) => {
+  //   props.selectNote(props.noteInfo);
+  //   // console.log("Hello from NotePreviewCard, my props.noteInfo are: ", props.noteInfo)
+  // }
 
   return (
     <Accordion>
