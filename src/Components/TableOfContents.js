@@ -5,31 +5,35 @@ import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
 
 // ⬇️ new stuff
-import { Switch, Route, useParams, useRouteMatch} from "react-router-dom";
+import { 
+  Switch, 
+  Route, 
+  useParams, 
+  useRouteMatch
+} from "react-router-dom";
 
 // QQ: uses inline styling
+// old misguided crap
+// const [notePage, setNotePage] = useState(null);
+// consider a hook to enable cond-rend of notePage vs notesList
+// const [displayNote, setDisplayNote] = useState(false);
+
+// match appears to be fine, correct object
+// console.log(props.match)
+
+// const selectNote = note => {
+//     console.log("Hello from TableOfContents Component. I am invoking setNotePage.")
+//     setNotePage(note)
+//     console.log("notePage should now be set to the noteInfo props of the note whose button was pressed.")
+// }
 const TableOfContents = (props) => {
-  const [notePage, setNotePage] = useState(null);
-  // adding a hook to enable cond-rend of notePage vs notesList
-  const [displayNote, setDisplayNote] = useState(false);
-
-  // match appears to be fine, correct object
-  // console.log(props.match)
-
-  const selectNote = note => {
-      console.log("Hello from TableOfContents Component. I am invoking setNotePage.")
-      setNotePage(note)
-      console.log("notePage should now be set to the noteInfo props of the note whose button was pressed.")
-  }
-
+  const {url, path} = useRouteMatch();
+  
   const notesList = props.notes.map ( (noteInfo, idx) => 
     <NotePreviewCard
       key={idx}
       id={idx}
       noteInfo={noteInfo}
-      match={props.match}
-      location={props.location}
-      selectNote={selectNote}
     />
   );
 

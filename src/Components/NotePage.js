@@ -13,8 +13,10 @@ import {useParams} from "react-router-dom"
   // if that saves many lines of code though but.... 
 
 const NotePage = (props) => {
-  const color = props.color
-  let noteId = useParams().noteId;
+  const {noteId} = useParams();
+  // let noteId = useParams().noteId;
+
+  let color = props.color
   console.log("noteId: ", noteId)
 
   const testNoteId = props.notes[0].note_id

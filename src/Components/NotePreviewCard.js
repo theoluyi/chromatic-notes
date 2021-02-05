@@ -10,11 +10,6 @@ const NotePreviewCard = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
   const {url} = useRouteMatch()
 
-  // const handleButtonClick = ( ) => {
-  //   props.selectNote(props.noteInfo);
-  //   // console.log("Hello from NotePreviewCard, my props.noteInfo are: ", props.noteInfo)
-  // }
-
   return (
     <Accordion>
       <Card bg="transparent" text="light">
