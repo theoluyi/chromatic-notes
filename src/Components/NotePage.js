@@ -23,21 +23,17 @@ const NotePage = (props) => {
   let myNote = props.notes.find(note => Number(note.note_id) == Number(noteId+1))
   console.log("myNote: ", myNote)
 
-  // const {date_created, note_text, note_title}
+  const {date_created, note_text, note_title} = myNote;
 
   return (
     <div className={`note-page ${color}`}>
       <div className="note-info">
-        {/* <h2>{note_title}</h2> */}
-        {/* <h2>{noteInfo[match.params.noteId]}</h2> */}
-        {/* <h2>{noteId}</h2> */}
-        {/* <p>{date_created}</p> */}
-        <p>{"hello"}</p>
+        <h2>{note_title}</h2>
+        <p>{date_created}</p>
       </div>
       <br/>
       <div className="note-body">
-        {/* <p>{note_text}</p> */}
-        <p>"hello"</p>
+        <p>{note_text}</p>
         <MyEditor />
       </div>
     </div>
