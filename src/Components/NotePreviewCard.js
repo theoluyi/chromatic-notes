@@ -20,7 +20,7 @@ const NotePreviewCard = (props) => {
           <span>
             <Button variant="secondary">
             {/* new stuff right here with this link */}
-              <Link to={`${url}/${props.id}`}>📖 </Link>
+              <Link to={`${url}/${props.id+1}`}>📖 </Link>
             </Button>{" "}
             <Button variant="dark">🗑</Button>
           </span>

@@ -37,29 +37,42 @@ const TableOfContents = (props) => {
     />
   );
 
-  const noteView = (
-    <Route 
+  // console.log ("TOC's props.notes: ", props.notes)
+
+  const notesView = props.notes.map ( (noteInfo, idx) =>
+    <Route
       path={`${url}/:noteId`} 
       render={routerProps =>
         <NotePage
           {...routerProps}
-          // we should know here what the id is so we can pass it in as key + id
-          // but having trouble getting access to params at this layer
-          // key={idx}
-          // id={idx}
+          key={idx}
+          id={idx}
           color={props.color}
           notes={props.notes}
-          // match={props.match}
-          // params={props.match.params}
         /> 
     }/>
   )
+  // const noteView = (
+  //   <Route
+  //     path={`${url}/:noteId`} 
+  //     render={routerProps =>
+  //       <NotePage
+  //         {...routerProps}
+  //         // we should know here what the id is so we can pass it in as key + id
+  //         // but having trouble getting access to params at this layer
+  //         // key={idx}
+  //         // id={idx}
+  //         color={props.color}
+  //         notes={props.notes}
+  //       /> 
+  //   }/>
+  // )
 
   const capitalizedNotebookTitle = props.color.split('-').map( word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
   return (  
     <Switch>
-      <Route exact path={props.match.url} render={() => <div
+      <Route exact path={url} render={() => <div
           className={`table-of-contents ${props.color}`}
           style={{
             width: "100%",
@@ -77,7 +90,7 @@ const TableOfContents = (props) => {
           <br/>
           <Button variant="transparent">i</Button>
         </div>} />  {/* end of render prop */}
-      {noteView}
+      {notesView}
     </Switch>
   );
 };
