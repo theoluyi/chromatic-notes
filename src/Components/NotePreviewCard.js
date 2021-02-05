@@ -8,7 +8,6 @@ import {Link, useRouteMatch} from "react-router-dom";
 // QQ: uses inline styling
 const NotePreviewCard = (props) => {
   const {date_created, note_text, note_title} = props.noteInfo;
-  const {match} = props;
   const {url} = useRouteMatch()
 
   // const handleButtonClick = ( ) => {

@@ -20,8 +20,8 @@ const NotePage = (props) => {
   const testNoteId = props.notes[0].note_id
   console.log("testNoteId: ", testNoteId)
 
-  let myNote = props.notes.filter(note => Number(note.note_id) == Number(noteId+1))
-  console.log(myNote)
+  let myNote = props.notes.find(note => Number(note.note_id) == Number(noteId+1))
+  console.log("myNote: ", myNote)
 
   // const {date_created, note_text, note_title}
 
