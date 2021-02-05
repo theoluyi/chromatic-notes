@@ -28,7 +28,7 @@ import {
 // }
 const TableOfContents = (props) => {
   const {url, path} = useRouteMatch();
-  
+
   const notesList = props.notes.map ( (noteInfo, idx) => 
     <NotePreviewCard
       key={idx}
@@ -39,7 +39,7 @@ const TableOfContents = (props) => {
 
   const noteView = (
     <Route 
-      path={`${props.match.url}/:noteId`} 
+      path={`${url}/:noteId`} 
       render={routerProps =>
         <NotePage
           {...routerProps}

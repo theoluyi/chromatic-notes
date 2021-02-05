@@ -13,19 +13,14 @@ import {useParams} from "react-router-dom"
   // if that saves many lines of code though but.... 
 
 const NotePage = (props) => {
+  let {color} = props
+
   const {noteId} = useParams();
-  // let noteId = useParams().noteId;
+  console.log("noteId: ", typeof noteId)
 
-  let color = props.color
-  console.log("noteId: ", noteId)
-
-  const testNoteId = props.notes[0].note_id
-  console.log("testNoteId: ", testNoteId)
-
-  let myNote = props.notes.find(note => Number(note.note_id) == Number(noteId+1))
+  let myNote = props.notes.find( ({note_id}) => note_id === Number(noteId+1))
   console.log("myNote: ", myNote)
-
-  const {date_created, note_text, note_title} = myNote;
+  let {date_created, note_text, note_title} = myNote;
 
   return (
     <div className={`note-page ${color}`}>
