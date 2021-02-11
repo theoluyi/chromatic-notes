@@ -3,29 +3,9 @@ import NotePreviewCard from "./NotePreviewCard";
 import NotePage from "./NotePage";
 import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
-
-// ⬇️ new stuff
-import { 
-  Switch, 
-  Route, 
-  useParams, 
-  useRouteMatch
-} from "react-router-dom";
+import { Switch, Route, useParams, useRouteMatch } from "react-router-dom";
 
 // QQ: uses inline styling
-// old misguided crap
-// const [notePage, setNotePage] = useState(null);
-// consider a hook to enable cond-rend of notePage vs notesList
-// const [displayNote, setDisplayNote] = useState(false);
-
-// match appears to be fine, correct object
-// console.log(props.match)
-
-// const selectNote = note => {
-//     console.log("Hello from TableOfContents Component. I am invoking setNotePage.")
-//     setNotePage(note)
-//     console.log("notePage should now be set to the noteInfo props of the note whose button was pressed.")
-// }
 const TableOfContents = (props) => {
   const {url, path} = useRouteMatch();
 
@@ -37,8 +17,6 @@ const TableOfContents = (props) => {
     />
   );
 
-  // console.log ("Table of Content's props.notes: ", props.notes)
-  // this is probably the part to debug QQ
   const notesView = props.notes.map ( (noteInfo, idx) => 
   <>  
     { console.log("hi") }
@@ -55,21 +33,6 @@ const TableOfContents = (props) => {
       }/>
     </>
   )
-  // const noteView = (
-  //   <Route
-  //     path={`${url}/:noteId`} 
-  //     render={routerProps =>
-  //       <NotePage
-  //         {...routerProps}
-  //         // we should know here what the id is so we can pass it in as key + id
-  //         // but having trouble getting access to params at this layer
-  //         // key={idx}
-  //         // id={idx}
-  //         color={props.color}
-  //         notes={props.notes}
-  //       /> 
-  //   }/>
-  // )
 
   const capitalizedNotebookTitle = props.color.split('-').map( word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
 
@@ -98,19 +61,4 @@ const TableOfContents = (props) => {
   );
 };
 
-// CLONE OF THIS BEFORE reworking into a single component which filters
-// const notePages = props.notes.map ( (noteInfo, idx) =>
-// <Route path={`${props.match.url}/:noteId`} render={routerProps =>       
-//   <NotePage
-//     {...routerProps}
-//     key={idx}
-//     id={idx}
-//     noteInfo={noteInfo}
-//     match={props.match}
-//     location={props.location}
-//     color={props.color}
-//   /> 
-// }/>
-// );
-// // ⬆️ new stuff
 export default TableOfContents;
