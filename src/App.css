@@ -12,10 +12,7 @@
 }
 
 .right-side {
-  /* background: whitesmoke;
-  background-color: #6581e4; */
-  padding: 1rem;
-  border: solid whitesmoke 0.3rem;
+  border: solid whitesmoke 0.25rem;
   color: whitesmoke;
   text-align: center;
 }
@@ -24,9 +21,6 @@
   height: 100vh;
   background: whitesmoke;
   display: grid;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
@@ -72,6 +66,31 @@
   grid-area: box9;
 }
 
-/* .card-header {
-  color: red;
-} */
+/* color-filling classNames for TableOfContents and NotePage components */
+.dark-blue {
+  background: #6581e4;
+}
+.dark-red {
+  background: #e75c6d;
+}
+.dark-green {
+  background: #62b06f;
+}
+.blue {
+  background: #9baff4;
+}
+.red {
+  background: #f8818f;
+}
+.green {
+  background: #78cc85;
+}
+.light-blue {
+  background: #bbc7ef;
+}
+.light-red {
+  background: #ffa8b3;
+}
+.light-green {
+  background: #99eca6;
+}
