@@ -5,11 +5,11 @@ import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
 import { Switch, Route, useParams, useRouteMatch } from "react-router-dom";
 
-// QQ: uses inline styling
 const TableOfContents = (props) => {
+  // QQ: uses inline styling
   const {url, path} = useRouteMatch();
 
-  const notesList = props.notes.map ( (noteInfo, idx) => 
+  const listOfNotePreviewCards = props.notes.map ( (noteInfo, idx) => 
     <NotePreviewCard
       key={idx}
       id={idx}
@@ -17,9 +17,7 @@ const TableOfContents = (props) => {
     />
   );
 
-  const notesView = props.notes.map ( (noteInfo, idx) => 
-  <>  
-    { console.log("hi") }
+  const routesForNotePages = props.notes.map ( (noteInfo, idx) => 
       <Route
         path={`${url}/:noteId`} 
         render={routerProps =>
@@ -31,10 +29,13 @@ const TableOfContents = (props) => {
             notes={props.notes}
           /> 
       }/>
-    </>
-  )
+  );
 
-  const capitalizedNotebookTitle = props.color.split('-').map( word => (word[0].toUpperCase()) + word.slice(1)).join(' ');
+  const capitalizedNotebookTitle = (
+    props.color.split('-').map( 
+      word => (word[0].toUpperCase()) + word.slice(1)
+    ).join(' ')
+  );
 
   return (  
     <Switch>
@@ -49,14 +50,13 @@ const TableOfContents = (props) => {
           <hr/>
           <h2>Table of Contents</h2> 
           <br/>
-            { notesList }
+            { listOfNotePreviewCards }
           <br/>
           <Button variant="transparent">+</Button> 
-          <br/>
-          <br/>
+          <br/> <br/>
           <Button variant="transparent">i</Button>
         </div>} />  {/* end of render prop */}
-      {notesView}
+      {routesForNotePages}
     </Switch>
   );
 };
