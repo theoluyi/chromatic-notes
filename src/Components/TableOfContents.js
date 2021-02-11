@@ -7,7 +7,7 @@ import { Switch, Route, useParams, useRouteMatch } from "react-router-dom";
 
 const TableOfContents = (props) => {
   // QQ: uses inline styling
-  const {url, path} = useRouteMatch();
+  const {path} = useRouteMatch();
 
   const listOfNotePreviewCards = props.notes.map ( (noteInfo, idx) => 
     <NotePreviewCard
@@ -19,7 +19,7 @@ const TableOfContents = (props) => {
 
   const routesForNotePages = props.notes.map ( (noteInfo, idx) => 
       <Route
-        path={`${url}/:noteId`} 
+        path={`${path}/:noteId`} 
         render={routerProps =>
           <NotePage
             {...routerProps}
@@ -39,7 +39,7 @@ const TableOfContents = (props) => {
 
   return (  
     <Switch>
-      <Route exact path={url} render={() => <div
+      <Route exact path={path} render={() => <div
           className={`table-of-contents ${props.color}`}
           style={{
             width: "100%",
