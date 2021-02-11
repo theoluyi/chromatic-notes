@@ -37,7 +37,7 @@ const TableOfContents = (props) => {
     />
   );
 
-  // console.log ("Table Of Content's props.notes: ", props.notes)
+  // console.log ("Table of Content's props.notes: ", props.notes)
   // this is probably the part to debug QQ
   const notesView = props.notes.map ( (noteInfo, idx) => 
   <>  
