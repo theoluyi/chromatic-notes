@@ -22,6 +22,8 @@ const NotePage = (props) => {
   let {date_created, note_text, note_title} = myNote;
 
   return (
+    <>
+    {console.log("hello from NotePage")}
     <div className={`note-page ${color}`}>
       <div className="note-info">
         <h2>{note_title}</h2>
@@ -33,6 +35,7 @@ const NotePage = (props) => {
         <MyEditor />
       </div>
     </div>
+    </>
   );
 };
 

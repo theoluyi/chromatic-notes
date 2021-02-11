@@ -38,19 +38,22 @@ const TableOfContents = (props) => {
   );
 
   // console.log ("TOC's props.notes: ", props.notes)
-
-  const notesView = props.notes.map ( (noteInfo, idx) =>
-    <Route
-      path={`${url}/:noteId`} 
-      render={routerProps =>
-        <NotePage
-          {...routerProps}
-          key={idx}
-          id={idx}
-          color={props.color}
-          notes={props.notes}
-        /> 
-    }/>
+  // this is probably the part to debug QQ
+  const notesView = props.notes.map ( (noteInfo, idx) => 
+  <>  
+    { console.log("hi") }
+      <Route
+        path={`${url}/:noteId`} 
+        render={routerProps =>
+          <NotePage
+            {...routerProps}
+            key={idx}
+            id={idx}
+            color={props.color}
+            notes={props.notes}
+          /> 
+      }/>
+    </>
   )
   // const noteView = (
   //   <Route

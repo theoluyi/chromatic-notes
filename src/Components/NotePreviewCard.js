@@ -18,10 +18,12 @@ const NotePreviewCard = (props) => {
             <span className="note-title">{note_title} <br /> <small>{date_created}</small></span>{" "}
           </Accordion.Toggle>
           <span>
+          <Link to={`${url}/${props.id+1}`} onClick={()=>console.log('hello from the NotePreviewCard link')}>
             <Button variant="secondary">
-            {/* new stuff right here with this link */}
-              <Link to={`${url}/${props.id+1}`}>📖 </Link>
+            {/* new stuff right here with this link */} 
+              <div>📖 </div>
             </Button>{" "}
+          </Link>
             <Button variant="dark">🗑</Button>
           </span>
           <span>PageNum</span>
