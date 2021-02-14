@@ -1,7 +1,6 @@
 import React from "react";
-import { Editor, EditorState } from "draft-js";
-import "draft-js/dist/Draft.css";
 import "../Component_Styles/NotePage.css";
+import NoteEditor from "./NoteEditor";
 import {useParams} from "react-router-dom"
   // I want to see if we can get params in TOC instead of here.
   // Then we can just filter and render a single Route there... Not sure
@@ -21,19 +20,12 @@ const NotePage = (props) => {
         <p>{date_created}</p>
       </div>
       <br/>
+      <NoteEditor noteText={note_text}/>
       <div className="note-body">
         <p>{note_text}</p>
-        <MyEditor />
       </div>
     </div>
   );
 };
-
-function MyEditor() {
-  const [editorState, setEditorState] = React.useState(() =>
-    EditorState.createEmpty()
-  );
-  return <Editor editorState={editorState} onChange={setEditorState} />;
-}
 
 export default NotePage;
