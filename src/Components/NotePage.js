@@ -14,16 +14,16 @@ const NotePage = (props) => {
   let {color} = props
   const {noteId} = useParams();
 
-  console.log("noteId: ", noteId)
-  console.log("props.notes: ", props.notes)
+  // console.log("noteId: ", noteId)
+  // console.log("props.notes: ", props.notes)
 
   let myNote = props.notes.find( ({note_id}) => note_id === Number(noteId))
-  console.log("myNote: ", myNote)
+  // console.log("myNote: ", myNote)
   let {date_created, note_text, note_title} = myNote;
 
   return (
     <>
-    {console.log("hello from NotePage")}
+    {/* {console.log("hello from NotePage")} */}
     <div className={`note-page ${color}`}>
       <div className="note-info">
         <h2>{note_title}</h2>

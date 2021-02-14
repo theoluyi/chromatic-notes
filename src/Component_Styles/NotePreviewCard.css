@@ -22,3 +22,8 @@
   /* background-color: aquamarine; */
   /* align-self: flex-end; */
 }
+
+.card-body {
+  text-align: start;
+  text-justify: auto;
+}
