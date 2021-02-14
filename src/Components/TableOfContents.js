@@ -53,8 +53,8 @@ const TableOfContents = (props) => {
             { listOfNotePreviewCards }
           <br/>
           <Button variant="transparent">+</Button> 
-          <br/> <br/>
-          <Button variant="transparent">i</Button>
+          {/* <br/> <br/>
+          <Button variant="transparent">i</Button> */}
         </div>} />  {/* end of render prop */}
       {routesForNotePages}
     </Switch>
