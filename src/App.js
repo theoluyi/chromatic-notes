@@ -20,11 +20,6 @@ function App() {
   const [user, setUser] = useState(false)
   // const [data, setData] = useState({})
 
-    // function down, invocation up
-  const selectNotebook = notebookColor => {
-    setDisplayedNotebook(notebookColor)
-  }
-
   // this should be in TableOfContents
   // const selectNote = note => {
   //   console.log("hello from app.js")
@@ -41,7 +36,6 @@ function App() {
       key={notebook.color}
       color={notebook.color}
       name={notebook.name}
-      selectNotebook={selectNotebook}
     />
   )
 

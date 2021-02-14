@@ -11,7 +11,7 @@ const NotebookCard = (props) => {
   }
 
   return (
-    <div className="notebook-card" id={props.color} onClick={handleClick}>
+    <div className="notebook-card" id={props.color} >
       <Link to={`/${props.color}`}>
         <p>{props.name}<br/>Notebook</p>
       </Link>
