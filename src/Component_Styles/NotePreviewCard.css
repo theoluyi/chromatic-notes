@@ -7,4 +7,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.preview-card-accordion {
+  /* background-color: red; */
+  flex-grow: 1;
+  /* align-self: flex-start; */
+  text-align: start;
+}
+
+.preview-buttons {
+  padding-left: 5px;
+  /* background-color: aquamarine; */
+  /* align-self: flex-end; */
 }

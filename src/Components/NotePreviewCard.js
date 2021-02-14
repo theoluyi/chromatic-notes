@@ -7,23 +7,21 @@ import {Link, useRouteMatch} from "react-router-dom";
 
 // QQ: uses inline styling
 const NotePreviewCard = (props) => {
-  const {date_created, note_text, note_title} = props.noteInfo;
   const {url} = useRouteMatch()
-
-  console.log("date_created ", date_created)
+  const {date_created, note_text, note_title} = props.noteInfo;
   const prettyDate = (date_created.slice(0,9))
 
   return (
     <Accordion>
       <Card bg="transparent" text="light">
         <Card.Header>
-          <Accordion.Toggle as={Button} variant="transparent" eventKey="0">
-            <span className="note-title">{note_title} <br /> <small>{prettyDate}</small></span>{" "}
+          <Accordion.Toggle className="preview-card-accordion" as={Button} variant="transparent" eventKey="0">
+            <span className="note-title">{note_title} <small>{prettyDate}</small></span>{" "}
           </Accordion.Toggle>
-          <span>
+          <span className="preview-buttons">
           <Link to={`${url}/${props.id+1}`} >
             <Button variant="secondary">
-              <div>📖 </div>
+              <div>📖</div>
             </Button>{" "}
           </Link>
             <Button variant="dark">🗑</Button>
