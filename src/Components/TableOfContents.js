@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import NotePreviewCard from "./NotePreviewCard";
 import NotePage from "./NotePage";
 import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
-import { Switch, Route, useParams, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 const TableOfContents = (props) => {
   // QQ: uses inline styling

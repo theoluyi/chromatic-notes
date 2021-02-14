@@ -15,15 +15,12 @@ import TableOfContents from "./Components/TableOfContents";
 import mockData from "./data.js";
 
 function App() {
-    // state hooks 
-  const [displayedNotebook, setDisplayedNotebook] = useState('no-notebook-selected') // might be better to use numbers?
-  const [user, setUser] = useState(false)
+  // state hooks 
   // const [data, setData] = useState({})
-
-  // this should be in TableOfContents
-  // const selectNote = note => {
-  //   console.log("hello from app.js")
-  // }
+  const [
+    //user
+    , setUser
+  ] = useState(false)
 
     // method for fake login w/out backend user persistence
   const mimicUserSignInAndUp = () => {
