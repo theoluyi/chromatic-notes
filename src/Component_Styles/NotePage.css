@@ -12,6 +12,7 @@
 .note-body {
   /* border: whitesmoke solid 3px; */
   flex-grow: 1;
+  border-bottom: whitesmoke solid .5rem;
   /* padding has been made irrelevant/impotent by other CSS properties */
   /* padding-bottom: 200px;  */
 }
