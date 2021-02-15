@@ -21,7 +21,7 @@ const NotePage = (props) => {
         <p>Created: {prettyDate}</p>
       </div>
       <div className="note-body">
-        <RichEditor note_text={note_text} color={color}/>
+        <RichEditor note_text={note_text}/>
       </div>
     </div>
   );
