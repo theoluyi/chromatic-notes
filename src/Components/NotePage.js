@@ -20,9 +20,8 @@ const NotePage = (props) => {
         <p>{date_created}</p>
       </div>
       <br/>
-      <RichEditor note_text={note_text}/>
       <div className="note-body">
-        <p>{note_text}</p>
+      <RichEditor note_text={note_text} color={color}/>
       </div>
     </div>
   );
