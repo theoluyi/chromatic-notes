@@ -39,7 +39,8 @@ const TableOfContents = (props) => {
 
   return (  
     <Switch>
-      <Route exact path={path} render={() => <div
+      <Route exact path={path} render={() => 
+        <div
           className={`table-of-contents ${props.color}`}
           style={{
             width: "100%",
@@ -48,13 +49,10 @@ const TableOfContents = (props) => {
         >
           <h1> { 'The '+ capitalizedNotebookTitle + ' Notebook' } </h1>
           <hr/>
-          <h2>Table of Contents</h2> 
-          <br/>
+          <h4>Table of Contents</h4> 
             { listOfNotePreviewCards }
           <br/>
           <Button variant="transparent">+</Button> 
-          {/* <br/> <br/>
-          <Button variant="transparent">i</Button> */}
         </div>} />  {/* end of render prop */}
       {routesForNotePages}
     </Switch>
