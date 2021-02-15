@@ -28,8 +28,8 @@
   }
   
   .RichEditor-editor .RichEditor-blockquote {
-    border-left: 5px solid #eee;
-    color: #666;
+    border-left: 5px solid whitesmoke;
+    color: white;
     font-family: 'Hoefler Text', 'Georgia', serif;
     font-style: italic;
     margin: 16px 0;

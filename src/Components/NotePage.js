@@ -19,7 +19,6 @@ const NotePage = (props) => {
         <h2>{note_title}</h2>
         <p>{date_created}</p>
       </div>
-      <br/>
       <div className="note-body">
       <RichEditor note_text={note_text} color={color}/>
       </div>
