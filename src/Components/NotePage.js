@@ -12,12 +12,13 @@ const NotePage = (props) => {
 
   const myNote = props.notes.find( ({note_id}) => note_id === Number(noteId));
   const {date_created, note_text, note_title} = myNote;
+  const prettyDate = (date_created.slice(0,9))
 
   return (
     <div className={`note-page ${color}`}>
       <div className="note-info">
         <h2>{note_title}</h2>
-        <p>{date_created}</p>
+        <p>Created: {prettyDate}</p>
       </div>
       <div className="note-body">
       <RichEditor note_text={note_text} color={color}/>

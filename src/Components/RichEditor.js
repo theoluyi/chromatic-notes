@@ -1,12 +1,13 @@
 import React from "react";
-import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from "draft-js";
+import { Editor, EditorState, RichUtils, getDefaultKeyBinding, ContentState} from "draft-js";
 import '../Component_Styles/RichEditor.css'
 import "../../node_modules/draft-js/dist/Draft.css";
 
 class RichEditor extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {editorState: EditorState.createEmpty()};
+      // this.state = {editorState: EditorState.createEmpty()};
+      this.state = {editorState: EditorState.createWithContent(ContentState.createFromText(this.props.note_text))};
 
       this.focus = () => this.refs.editor.focus();
       this.onChange = (editorState) => this.setState({editorState});
