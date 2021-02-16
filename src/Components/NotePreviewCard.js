@@ -21,7 +21,7 @@ const NotePreviewCard = (props) => {
             <span className="note-title">{note_title} <br/> <small>{prettyDate}</small></span>{" "}
           </Accordion.Toggle>
           <span className="preview-buttons">
-          <Link to={`${url}/${props.id+1}`} >
+          <Link to={`${url}/${props.id}`}>
             <Button variant="secondary">
               <div>📖</div>
             </Button>{" "}

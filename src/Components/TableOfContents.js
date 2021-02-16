@@ -9,22 +9,22 @@ const TableOfContents = (props) => {
   // QQ: uses inline styling
   const {path} = useRouteMatch();
 
-  const listOfNotePreviewCards = props.notes.map ( (noteInfo, idx) => 
+  const listOfNotePreviewCards = props.notes.map ( (note) => 
     <NotePreviewCard
-      key={idx}
-      id={idx}
-      noteInfo={noteInfo}
+      key={note.note_id}
+      id={note.note_id}
+      noteInfo={note}
     />
   );
 
-  const routesForNotePages = props.notes.map ( (noteInfo, idx) => 
+  const routesForNotePages = props.notes.map ( (note, idx) => 
       <Route
         path={`${path}/:noteId`} 
         render={routerProps =>
           <NotePage
             {...routerProps}
-            key={idx}
-            id={idx}
+            key={note.note_id}
+            id={note.note_id}
             color={props.color}
             notes={props.notes}
           /> 

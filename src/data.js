@@ -1,7 +1,8 @@
 import faker from 'faker'
 var txtgen = require("txtgen")
-// import txtgen from 'txtgen' // this doesn't work for some reason
 
+
+// HELPER FUNCTIONS FOR CREATING DATA
 const capitalizedSentence = (sentence) => {
   return sentence.split(' ').map( 
     word => (word[0].toUpperCase()) + word.slice(1)
@@ -17,285 +18,78 @@ const titleFactory = () => {
 }
 
 const noteTextFactory = () => {
-  let numOfGraphs = Math.floor(Math.random() * 10) 
-  if (numOfGraphs === 0) numOfGraphs +=1
-  return txtgen.article([numOfGraphs])
+  let numOfGraphs = Math.floor(Math.random() * 6) + 1;
+  return txtgen.article([numOfGraphs]);
 }
 
-  console.log(noteTextFactory())
+const noteIdFactory = () => (Math.floor(Math.random() * 100) + 1)
 
-// console.log(txtgen.article([3]))
+const noteFactory = () => {
+  return {
+    note_id: noteIdFactory(),
+    note_title: titleFactory(),
+    date_created: "2010-04-23T18:25:43.511Z",
+    note_text: noteTextFactory()
+  }
+}
 
-const notebooks = [
+// console.log(noteFactory())
+
+const notesArrayFactory = () => {
+  let numOfNotes = Math.floor(Math.random() * 10) + 1;
+  let notesArray = []
+  while (numOfNotes) {
+    notesArray.push(noteFactory());
+    --numOfNotes
+  }
+  return notesArray
+}
+
+var notebooks = [
   {
     name: "Dark Blue",
     color: "dark-blue",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Dark Red",
     color: "dark-red",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Dark Green",
     color: "dark-green",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Blue",
     color: "blue",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Red",
     color: "red",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Green",
     color: "green",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Light Blue",
     color: "light-blue",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Light Red",
     color: "light-red",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Light Green",
     color: "light-green",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
 ];
 
@@ -303,62 +97,12 @@ const oldCopyOfNotebooks = [
   {
     name: "Dark Blue",
     color: "dark-blue",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Dark Red",
     color: "dark-red",
-    notes: [
-      {
-        note_id: 1,
-        note_title: titleFactory(),
-        date_created: "2011-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 2,
-        note_title: titleFactory(),
-        date_created: "2012-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 3,
-        note_title: titleFactory(),
-        date_created: "2013-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-      {
-        note_id: 4,
-        note_title: titleFactory(),
-        date_created: "2014-04-23T18:25:43.511Z",
-        note_text: noteTextFactory()
-      },
-    ],
+    notes: notesArrayFactory()
   },
   {
     name: "Dark Green",
