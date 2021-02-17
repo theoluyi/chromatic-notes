@@ -20,14 +20,14 @@ const NotePage = (props) => {
   return (
     <div className={`note-page ${color}`}>
         <h2>{note_title}</h2>
-        
+
         <div className="note-info">
-        <Button variant="transparent" 
-                onClick={() => history.goBack()}>
-                Back to Table of Contents
-        </Button>
-        <span>Created: {prettyDate}</span>
-      </div>
+          <Button variant="transparent" 
+                  onClick={() => history.goBack()}>
+                  Back
+          </Button>
+          <span>Created: {prettyDate}</span>
+        </div>
       <div className="note-body">
         <RichEditor note_text={note_text}/>
       </div>
