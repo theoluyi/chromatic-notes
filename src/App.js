@@ -12,9 +12,7 @@ import NotebookCard from "./Components/NotebookCard";
 import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 // mock data 
-import mockData from "./data.js";
-import { noteFactory } from "./data";
-
+import mockData, { noteFactory } from "./data.js";
 
 function App() {
   // state hooks 
@@ -32,6 +30,7 @@ function App() {
   const newNote = (e) => {
     console.log("You clicked the newNote button.")
   }
+  console.log(noteFactory())
 
     // name={user? notebook.name : null}
   const navGridNotebooks = data.map(
