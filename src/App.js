@@ -27,10 +27,12 @@ function App() {
     setUser(true)
   }
 
-  const newNote = (e) => {
-    console.log("You clicked the newNote button.")
+  const newNote = (e, notebookColor) => {
+    console.log("You clicked the newNote button.", "notebookColor: ", notebookColor)
+    setData([...data, noteFactory()])
   }
-  console.log(noteFactory())
+  console.log("noteFactory(): ", noteFactory())
+  console.log("data: ", data)
 
     // name={user? notebook.name : null}
   const navGridNotebooks = data.map(

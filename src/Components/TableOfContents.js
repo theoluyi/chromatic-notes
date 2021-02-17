@@ -19,10 +19,16 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
     //   console.log(notePageCountArray)
     //   return notePageCountArray
     // } // calculateAllPageCounts()
+    // QQ: uses inline styling
+  
+    
+  const TableOfContents = (props) => {
+  
+    const {path} = useRouteMatch();
 
-    const TableOfContents = (props) => {
-  // QQ: uses inline styling
-  const {path} = useRouteMatch();
+    const handleNewNoteClick = (e) => {
+      props.newNote(e, props.color)
+    }
   
   const listOfNotePreviewCards = props.notes.map ( (note) =>
   <>
@@ -71,7 +77,7 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
           <h4>Table of Contents</h4> 
             { listOfNotePreviewCards }
           <br/>
-          <Button variant="transparent" onClick={props.newNote}>+</Button> 
+          <Button variant="transparent" onClick={handleNewNoteClick}>+</Button> 
         </div>} /> {/* end of Route */}
       {routesForNotePages}
     </Switch>
