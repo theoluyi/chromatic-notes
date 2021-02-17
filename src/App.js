@@ -16,7 +16,7 @@ import mockData from "./data.js";
 
 function App() {
   // state hooks 
-  // const [data, setData] = useState({})
+  const [data, setData] = useState(mockData);
   const [
     //user
     , setUser
@@ -28,7 +28,7 @@ function App() {
   }
 
     // name={user? notebook.name : null}
-  const navGridNotebooks = mockData.map(
+  const navGridNotebooks = data.map(
     notebook =>  <NotebookCard
       key={notebook.color}
       color={notebook.color}
@@ -36,7 +36,7 @@ function App() {
     />
   )
 
-  const nineTableOfContentsRoutes = mockData.map(
+  const nineTableOfContentsRoutes = data.map(
     notebookInfo => <Route 
       path={`/${notebookInfo.color}`} 
       render={routerProps => <TableOfContents 

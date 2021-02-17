@@ -24,7 +24,7 @@ const noteTextFactory = () => {
 
 const noteIdFactory = () => (Math.floor(Math.random() * 100) + 1)
 
-const noteFactory = () => {
+export const noteFactory = () => {
   return {
     note_id: noteIdFactory(),
     note_title: titleFactory(),

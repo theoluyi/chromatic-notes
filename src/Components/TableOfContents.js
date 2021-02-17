@@ -4,10 +4,7 @@ import NotePage from "./NotePage";
 import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-
-const TableOfContents = (props) => {
-  // QQ: uses inline styling
-  const {path} = useRouteMatch();
+import { noteFactory } from "../data";
 
   /**
     * So, we are going to map over the note text Property, and call on its length Property divide that by the number of words we are
@@ -23,6 +20,12 @@ const TableOfContents = (props) => {
     //   console.log(notePageCountArray)
     //   return notePageCountArray
     // } // calculateAllPageCounts()
+
+    const TableOfContents = (props) => {
+  // QQ: uses inline styling
+  const {path} = useRouteMatch();
+
+  console.log(noteFactory())
   
   const listOfNotePreviewCards = props.notes.map ( (note) =>
   <>
