@@ -72,7 +72,7 @@ const TableOfContents = (props) => {
             { listOfNotePreviewCards }
           <br/>
           <Button variant="transparent">+</Button> 
-        </div>} />  {/* end of render prop */}
+        </div>} /> {/* end of Route */}
       {routesForNotePages}
     </Switch>
   );
