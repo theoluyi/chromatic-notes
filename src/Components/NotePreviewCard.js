@@ -28,7 +28,7 @@ const NotePreviewCard = (props) => {
           </Link>
             <Button variant="dark">🗑</Button>
           </span>
-          {/* <span>PageNum</span> */}
+          {/* <span>{pageCount()}</span> */}
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>{first30Words}</Card.Body>

@@ -9,12 +9,31 @@ const TableOfContents = (props) => {
   // QQ: uses inline styling
   const {path} = useRouteMatch();
 
-  const listOfNotePreviewCards = props.notes.map ( (note) => 
+  /**
+    * So, we are going to map over the note text Property, and call on its length Property divide that by the number of words we are
+      Saying that a single note has, and then we are storing that page number as our current page count variable
+      For the first note we are just assigning it number one, it starts on page 1, and the next note starts on one plus note the first note's
+      Page count and then we just continue us going down, and we only need to store one number at a time, which is just a previous number of pages of all the
+      Previous notes son together
+    */
+    // My priority is to get this deployed today, and this is not an MVP feature.
+    // It's also going to require a bunch of CSS edits so how about we focus on our priorities?
+    // const calculateAllPageCounts = () => {
+    //   const notePageCountArray = props.notes.map(note => Math.floor(note.note_text.length/250))
+    //   console.log(notePageCountArray)
+    //   return notePageCountArray
+    // } // calculateAllPageCounts()
+  
+  const listOfNotePreviewCards = props.notes.map ( (note) =>
+  <>
+  {/* {const noteWordCountArray = Math.floor(note.note_text.length/250)} */}
+
     <NotePreviewCard
       key={note.note_id}
       id={note.note_id}
       noteInfo={note}
     />
+  </>
   );
 
   const routesForNotePages = props.notes.map ( (note, idx) => 
