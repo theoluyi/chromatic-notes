@@ -5,9 +5,11 @@
   height: inherit;
 }
 
-/* .note-info {
-  border: whitesmoke solid 3px;
-} */
+.note-info {
+  display: flex;
+  justify-content: space-around;
+  /* padding: 10px; */
+}
 
 .note-body {
   /* border: whitesmoke solid 3px; */
@@ -16,4 +18,8 @@
   border-bottom: whitesmoke solid .5rem;
   /* padding has been made irrelevant/impotent by other CSS properties */
   /* padding-bottom: 200px;  */
+}
+
+.back-btn {
+  justify-self: flex-start;
 }
