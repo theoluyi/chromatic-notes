@@ -50,6 +50,10 @@ const TableOfContents = (props) => {
       }/>
   );
 
+  const newNote = (e) => {
+    console.log("You clicked the newNote button.")
+  }
+
   const capitalizedNotebookTitle = (
     props.color.split('-').map( 
       word => (word[0].toUpperCase()) + word.slice(1)
@@ -71,7 +75,7 @@ const TableOfContents = (props) => {
           <h4>Table of Contents</h4> 
             { listOfNotePreviewCards }
           <br/>
-          <Button variant="transparent">+</Button> 
+          <Button variant="transparent" onClick={newNote}>+</Button> 
         </div>} /> {/* end of Route */}
       {routesForNotePages}
     </Switch>
