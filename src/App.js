@@ -13,6 +13,8 @@ import SignedInView from "./Components/SignedInView";
 import TableOfContents from "./Components/TableOfContents";
 // mock data 
 import mockData from "./data.js";
+import { noteFactory } from "./data";
+
 
 function App() {
   // state hooks 
@@ -25,6 +27,10 @@ function App() {
     // method for fake login w/out backend user persistence
   const mimicUserSignInAndUp = () => {
     setUser(true)
+  }
+
+  const newNote = (e) => {
+    console.log("You clicked the newNote button.")
   }
 
     // name={user? notebook.name : null}
@@ -42,7 +48,8 @@ function App() {
       render={routerProps => <TableOfContents 
         {...routerProps} 
         color={notebookInfo.color} 
-        notes={notebookInfo.notes}   
+        notes={notebookInfo.notes}
+        newNote={newNote} 
         // this should be in TableOfContents, not App.js
         // selectNote={selectNote}
       />} 

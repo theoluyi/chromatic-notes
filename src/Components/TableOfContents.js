@@ -4,7 +4,6 @@ import NotePage from "./NotePage";
 import Button from "react-bootstrap/Button";
 import "../Component_Styles/TableOfContents.css";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import { noteFactory } from "../data";
 
   /**
     * So, we are going to map over the note text Property, and call on its length Property divide that by the number of words we are
@@ -24,8 +23,6 @@ import { noteFactory } from "../data";
     const TableOfContents = (props) => {
   // QQ: uses inline styling
   const {path} = useRouteMatch();
-
-  console.log(noteFactory())
   
   const listOfNotePreviewCards = props.notes.map ( (note) =>
   <>
@@ -53,10 +50,6 @@ import { noteFactory } from "../data";
       }/>
   );
 
-  const newNote = (e) => {
-    console.log("You clicked the newNote button.")
-  }
-
   const capitalizedNotebookTitle = (
     props.color.split('-').map( 
       word => (word[0].toUpperCase()) + word.slice(1)
@@ -78,7 +71,7 @@ import { noteFactory } from "../data";
           <h4>Table of Contents</h4> 
             { listOfNotePreviewCards }
           <br/>
-          <Button variant="transparent" onClick={newNote}>+</Button> 
+          <Button variant="transparent" onClick={props.newNote}>+</Button> 
         </div>} /> {/* end of Route */}
       {routesForNotePages}
     </Switch>
