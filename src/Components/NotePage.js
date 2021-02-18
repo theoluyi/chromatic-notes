@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import "../Component_Styles/NotePage.css";
 import RichEditor from "./RichEditor";
 import {useParams, useHistory} from "react-router-dom"
 import Button from "react-bootstrap/Button";
-
+import Modal from "react-bootstrap/Modal";
 
   // I want to see if we can get params in TOC instead of here.
   // Then we can just filter and render a single Route there... Not sure
@@ -13,6 +13,13 @@ const NotePage = (props) => {
   const {color} = props;
   const {noteId} = useParams();
   const history = useHistory();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
 
   const errorMessage = {
     date_created: "Today",
@@ -37,9 +44,24 @@ const NotePage = (props) => {
         </div>
       <div className="note-body">
         <RichEditor note_text={note_text}/>
-        <Button variant="transparent" 
-                  onClick={() => alert("This project is for presentational purposes and lacks a database, so your notes won't save here. I know 😢 Here's a song to make you feel better: https://www.youtube.com/watch?v=DWMiFYkc3VE")}>
-                  Save
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Pensive Popout Window</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>This project is for presentational purposes and lacks a database, so your notes won't save here. 
+        I know. 😢 <br/><br/>Maybe a song will make you feel better?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Mmm I'll pass
+          </Button>
+          <Button variant="primary" onClick={() => window.open("https://www.youtube.com/watch?v=GOUHNld7tNo", "_blank")}>
+            Gimme that song 
+          </Button>
+        </Modal.Footer>
+      </Modal>
+        <Button variant="transparent" onClick={handleShow}>
+          Save
         </Button>
       </div>
     </div>
