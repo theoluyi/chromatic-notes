@@ -1,4 +1,5 @@
 # **Chromatic Notes**
+To view the live version of this app, click this link https://chromatic-notes.netlify.app/
 
 To run this project locally on your own computer,
 
