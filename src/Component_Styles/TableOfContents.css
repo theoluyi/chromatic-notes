@@ -5,6 +5,7 @@
 }
 
 .table-of-contents {
+  height: inherit;
   overflow-y: auto;
   padding-bottom: 10px;
   /* border: solid red 4px; */

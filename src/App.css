@@ -12,6 +12,7 @@
 }
 
 .right-side {
+  height: 100vh;
   border: solid whitesmoke 0.25rem;
   color: whitesmoke;
   text-align: center;
