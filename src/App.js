@@ -27,12 +27,19 @@ function App() {
     setUser(true)
   }
 
+  // works but doesn't preserve array's ordering (indexing?) of notebook objects 
   const newNote = (e, notebookColor) => {
-    console.log("You clicked the newNote button.", "notebookColor: ", notebookColor)
-    setData([...data, noteFactory()])
+    // console.log("You clicked the newNote button.", "notebookColor: ", notebookColor)
+    const notebookToUpdate = data.find(notebook => notebook.color === notebookColor)
+    const otherNotebooks = data.filter(notebook => notebook.color !== notebookColor)
+    // console.log("notebookToUpdate Before: ", notebookToUpdate)
+    notebookToUpdate.notes.push(noteFactory())
+    // console.log("notebookToUpdate After: ", notebookToUpdate)
+    setData([...otherNotebooks, notebookToUpdate])
   }
-  console.log("noteFactory(): ", noteFactory())
-  console.log("data: ", data)
+
+  // console.log("noteFactory(): ", noteFactory())
+  // console.log("data: ", data)
 
     // name={user? notebook.name : null}
   const navGridNotebooks = data.map(

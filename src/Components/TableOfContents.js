@@ -77,7 +77,11 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
           <h4>Table of Contents</h4> 
             { listOfNotePreviewCards }
           <br/>
-          <Button variant="transparent" onClick={handleNewNoteClick}>+</Button> 
+          <Button 
+            variant="transparent" 
+            onClick={handleNewNoteClick}
+            > +
+          </Button> 
         </div>} /> {/* end of Route */}
       {routesForNotePages}
     </Switch>
