@@ -39,9 +39,9 @@ function App() {
   }
 
   const deleteNote = (notebookColor, noteId) => {
-    console.log("hello from app delete");
-    console.log('notebookColor :>> ', notebookColor);
-    console.log('noteId :>> ', noteId);
+    // console.log("hello from app delete");
+    // console.log('notebookColor :>> ', notebookColor);
+    // console.log('noteId :>> ', noteId);
 
     const otherNotebooks = data.filter(notebook => notebook.color !== notebookColor)
     const notebookToUpdate = data.find(notebook => notebook.color === notebookColor)

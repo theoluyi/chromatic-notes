@@ -4,7 +4,7 @@ import "../Component_Styles/NotebookCard.css";
 
 const NotebookCard = (props) => (
   <div className="notebook-card" id={props.color} >
-    <Link to={`/${props.color}`}>
+    <Link to={`/${props.color}`} >
       <p>
         {props.name}
         <br/>

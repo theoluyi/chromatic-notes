@@ -14,7 +14,7 @@ const NotePreviewCard = (props) => {
   let first30Words = note_text.split(" ").slice(0,30).join(" ").concat("...")
 
   const handleDeleteClick = () => {
-    console.log("hello from notepreviewcard delete.")
+    // console.log("hello from notepreviewcard delete.")
     props.deleteNote(props.color, props.id)
   }
 

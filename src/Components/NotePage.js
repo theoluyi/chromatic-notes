@@ -4,6 +4,7 @@ import RichEditor from "./RichEditor";
 import {useParams, useHistory} from "react-router-dom"
 import Button from "react-bootstrap/Button";
 
+
   // I want to see if we can get params in TOC instead of here.
   // Then we can just filter and render a single Route there... Not sure
   // if that saves many lines of code though but.... 
@@ -36,6 +37,10 @@ const NotePage = (props) => {
         </div>
       <div className="note-body">
         <RichEditor note_text={note_text}/>
+        <Button variant="transparent" 
+                  onClick={() => alert("This project is for presentational purposes and lacks a database, so your notes won't save here. I know 😢 Here's a song to make you feel better: https://www.youtube.com/watch?v=DWMiFYkc3VE")}>
+                  Save
+        </Button>
       </div>
     </div>
   );
