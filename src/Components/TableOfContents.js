@@ -38,6 +38,8 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
       key={note.note_id}
       id={note.note_id}
       noteInfo={note}
+      color={props.color}
+      deleteNote={props.deleteNote}
     />
   </>
   );

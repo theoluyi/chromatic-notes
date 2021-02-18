@@ -13,6 +13,11 @@ const NotePreviewCard = (props) => {
 
   let first30Words = note_text.split(" ").slice(0,30).join(" ").concat("...")
 
+  const handleDeleteClick = () => {
+    console.log("hello from notepreviewcard delete.")
+    props.deleteNote(props.color, props.id)
+  }
+
   return (
     <Accordion>
       <Card bg="transparent" text="light">
@@ -26,7 +31,7 @@ const NotePreviewCard = (props) => {
               <div>📖</div>
             </Button>{" "}
           </Link>
-            <Button variant="dark">🗑</Button>
+            <Button onClick={handleDeleteClick}  variant="dark">🗑</Button>
           </span>
           {/* <span>{pageCount()}</span> */}
         </Card.Header>

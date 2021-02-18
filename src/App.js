@@ -38,6 +38,18 @@ function App() {
     setData([...otherNotebooks, notebookToUpdate])
   }
 
+  const deleteNote = (notebookColor, noteId) => {
+    console.log("hello from app delete");
+    console.log('notebookColor :>> ', notebookColor);
+    console.log('noteId :>> ', noteId);
+
+    const otherNotebooks = data.filter(notebook => notebook.color !== notebookColor)
+    const notebookToUpdate = data.find(notebook => notebook.color === notebookColor)
+    console.log('notebookToUpdate :>> ', notebookToUpdate);
+    notebookToUpdate.notes = notebookToUpdate.notes.filter(note => note.note_id !== noteId)
+    setData([...otherNotebooks, notebookToUpdate])
+  }
+
   // console.log("noteFactory(): ", noteFactory())
   // console.log("data: ", data)
 
@@ -57,7 +69,8 @@ function App() {
         {...routerProps} 
         color={notebookInfo.color} 
         notes={notebookInfo.notes}
-        newNote={newNote} 
+        newNote={newNote}
+        deleteNote={deleteNote}
         // this should be in TableOfContents, not App.js
         // selectNote={selectNote}
       />} 
