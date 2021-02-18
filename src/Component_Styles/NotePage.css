@@ -2,12 +2,24 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: inherit;
 }
 
 .note-info {
-  border: whitesmoke solid 3px;
+  display: flex;
+  justify-content: space-around;
+  /* padding: 10px; */
 }
 
 .note-body {
-  border: whitesmoke solid 3px;
+  /* border: whitesmoke solid 3px; */
+  flex-grow: 1;
+  overflow-y: auto;
+  border-bottom: whitesmoke solid .5rem;
+  /* padding has been made irrelevant/impotent by other CSS properties */
+  /* padding-bottom: 200px;  */
+}
+
+.back-btn {
+  justify-self: flex-start;
 }

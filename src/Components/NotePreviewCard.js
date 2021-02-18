@@ -7,29 +7,36 @@ import {Link, useRouteMatch} from "react-router-dom";
 
 // QQ: uses inline styling
 const NotePreviewCard = (props) => {
-  const {date_created, note_text, note_title} = props.noteInfo;
   const {url} = useRouteMatch()
+  const {date_created, note_text, note_title} = props.noteInfo;
+  const prettyDate = (date_created.slice(0,9))
+
+  let first30Words = note_text.split(" ").slice(0,30).join(" ").concat("...")
+
+  const handleDeleteClick = () => {
+    // console.log("hello from notepreviewcard delete.")
+    props.deleteNote(props.color, props.id)
+  }
 
   return (
     <Accordion>
       <Card bg="transparent" text="light">
         <Card.Header>
-          <Accordion.Toggle as={Button} variant="transparent" eventKey="0">
-            <span className="note-title">{note_title} <br /> <small>{date_created}</small></span>{" "}
+          <Accordion.Toggle className="preview-card-accordion" as={Button} variant="transparent" eventKey="0">
+            <span className="note-title">{note_title} <br/> <small>{prettyDate}</small></span>{" "}
           </Accordion.Toggle>
-          <span>
-          <Link to={`${url}/${props.id+1}`} onClick={()=>console.log('hello from the NotePreviewCard link')}>
+          <span className="preview-buttons">
+          <Link to={`${url}/${props.id}`} style={{ textDecoration: 'none' }}>
             <Button variant="secondary">
-            {/* new stuff right here with this link */} 
-              <div>📖 </div>
+              <div>📖</div>
             </Button>{" "}
           </Link>
-            <Button variant="dark">🗑</Button>
+            <Button onClick={handleDeleteClick}  variant="dark">🗑</Button>
           </span>
-          <span>PageNum</span>
+          {/* <span>{pageCount()}</span> */}
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>{note_text}</Card.Body>
+          <Card.Body>{first30Words}</Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>

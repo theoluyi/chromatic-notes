@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+Chromatic Notes
+To run this project locally on your own computer,
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clone the project
+in the project directory, run npm install, then npm start
+open localhost:3000/
+that should be it I think?!
+About Chromatic Notes
+Technologies Used: JavaScript, React, React Hooks, React Router, React Bootstrap, Draft.js, Faker.js, txtgen.js, Plain CSS, Flexbox
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+Note: this app has no backend at present, so you can edit notes, but notes will regenerate upon page refresh; old notes and changes will not be saved. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+tl;dr version: tagging is a bad organizational structure for note-taking apps. To make folders work even better, I think it will help to return to basics and mimic the look and experience of everyday physical items/data structures like a book, a table of contents, and a page, to give a note-taking app a more intuitive feel and help users locate important notes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Long Version:
 
-### `yarn eject`
+I've been interested in note-taking apps for a while. In 2016 I worked a fairly intense consulting job where information overload was a daily challenge; 50 emails a day, meetings, notebook notes, phone call notes, etc. Many of my co-workers were using Evernote as part or as a main feature of their organization system. Some advocated tags, some notebooks as the basic organizational unit, but nobody seemed too sure.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I went with tags, and to this day, I live with the consequences. My Evernote is the love child of a dumpster fire and a shitstorm. I got a twisted knot of notebooks and tags wrapping around thousands of notes, a shambolic organizational structure, attempting and failing to contain the mess like a constipated boa constrictor.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After reading an article by Thiago Forte called Tagging is Broken: Why the Tagging Concept in Evernote and Everywhere Else Sucks, I finally had my answer for why tagging had failed so miserably.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Since I began coding, I have wanted to build my own note-taking app that tackles this problem that seems to plague Evernote and so many other note-taking apps and organizational features. I find this interesting because it deals not just with how to structure data, but with how to do so in a way that is intuitive to people.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In Chromatic Notes, my goal was to create a simple and intuitive interface that makes one forget about tags entirely and instead approach the placement of notes in an intuitive way. I wanted the notebooks to look like actual books and the notes to look like actual pages in them, so that the experience of writing would feel embodied and physical, tied to a location. Since location is a primary feature of how humans remember things (people ask themselves "where'd I put my car keys?" not "in what category of container did I put my car keys?") I wanted the app to reflect this. It's a simple start, but I'm pleasantly satisfied with it.

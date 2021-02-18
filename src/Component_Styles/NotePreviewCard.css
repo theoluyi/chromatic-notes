@@ -7,4 +7,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.preview-card-accordion {
+  /* background-color: red; */
+  width: 80%;
+  text-align: start;
+}
+
+.preview-buttons {
+  /* background-color: blue; */
+}
+
+.card-body {
+  text-align: start;
+  text-justify: auto;
 }
