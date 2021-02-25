@@ -19,6 +19,8 @@ const NotePage = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  console.log('noteId :>> ', noteId);
+  console.log('props :>> ', props);
 
 
   const errorMessage = {

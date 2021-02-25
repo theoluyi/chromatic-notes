@@ -31,9 +31,6 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
     }
   
   const listOfNotePreviewCards = props.notes.map ( (note) =>
-  <>
-  {/* {const noteWordCountArray = Math.floor(note.note_text.length/250)} */}
-
     <NotePreviewCard
       key={note.note_id}
       id={note.note_id}
@@ -41,7 +38,6 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
       color={props.color}
       deleteNote={props.deleteNote}
     />
-  </>
   );
 
   const routesForNotePages = props.notes.map ( (note, idx) => 

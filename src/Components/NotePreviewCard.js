@@ -18,6 +18,8 @@ const NotePreviewCard = (props) => {
     props.deleteNote(props.color, props.id)
   }
 
+  console.log('url :>> ', url);
+
   return (
     <Accordion>
       <Card bg="transparent" text="light">

@@ -1,7 +1,6 @@
 import faker from 'faker'
 var txtgen = require("txtgen")
 
-
 // HELPER FUNCTIONS FOR CREATING DATA
 const capitalizedSentence = (sentence) => {
   return sentence.split(' ').map( 

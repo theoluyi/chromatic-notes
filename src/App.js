@@ -63,16 +63,14 @@ function App() {
   )
 
   const nineTableOfContentsRoutes = data.map(
-    notebookInfo => <Route 
-      path={`/${notebookInfo.color}`} 
+    notebook => <Route 
+      path={`/${notebook.color}`} 
       render={routerProps => <TableOfContents 
         {...routerProps} 
-        color={notebookInfo.color} 
-        notes={notebookInfo.notes}
+        color={notebook.color} 
+        notes={notebook.notes}
         newNote={newNote}
         deleteNote={deleteNote}
-        // this should be in TableOfContents, not App.js
-        // selectNote={selectNote}
       />} 
     />
   )
