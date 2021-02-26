@@ -21,10 +21,6 @@ const NotePage = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log('noteId :>> ', noteId);
-  console.log('props :>> ', props);
-
-
   const errorMessage = {
     date_created: "Today",
     note_text: `Notes in this app are generated with randomly assigned id numbers, which also determine the url/endpoint of a note (e.g., this one's is ${noteId}). You probably got here by refreshing while looking at a note. That note no longer exists now, but the url in your browser's address bar is still pointed to it. I could probably fix this with a simple redirect, but I find this error amusing and educating.`,
@@ -71,8 +67,8 @@ const NotePage = (props) => {
     </div>
     )
   } else {
-    console.log('color :>> ', color);
-    return <div style={{color: "black"}}>This note no longer exists, please select a notebook from the left to see available notes</div>
+    console.log('history :>> ', history);
+    return <div onClick={() => history.goBack()} style={{color: "black"}}> This note no longer exists, please select a notebook from the left to see available notes, or click here to go back.</div>
   }
 };
 
