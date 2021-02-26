@@ -71,7 +71,8 @@ const NotePage = (props) => {
     </div>
     )
   } else {
-    return null
+    console.log('color :>> ', color);
+    return <div style={{color: "black"}}>This note no longer exists, please select a notebook from the left to see available notes</div>
   }
 };
 
