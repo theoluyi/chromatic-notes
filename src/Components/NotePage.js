@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "../Component_Styles/NotePage.css";
 import RichEditor from "./RichEditor";
-import {useParams, useHistory, Redirect, useRouteMatch} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
