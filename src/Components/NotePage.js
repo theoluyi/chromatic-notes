@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "../Component_Styles/NotePage.css";
 import RichEditor from "./RichEditor";
-import {useParams, useHistory} from "react-router-dom"
+import {useParams, useHistory, Redirect} from "react-router-dom"
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
@@ -68,7 +68,10 @@ const NotePage = (props) => {
     )
   } else {
     console.log('history :>> ', history);
-    return <div onClick={() => history.goBack()} style={{color: "black"}}> This note no longer exists, please select a notebook from the left to see available notes, or click <big><strong>here</strong></big> to go back.</div>
+    return (
+      // <div onClick={() => history.goBack()} style={{color: "black"}}> This note no longer exists, please select a notebook from the left to see available notes, or click <big><strong>here</strong></big> to go back.</div>
+      <Redirect to={'/'}/>
+    )
   }
 };
 
